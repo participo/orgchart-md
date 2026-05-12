@@ -1,126 +1,307 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>orgchart.md, the new org chart for agents</title>
-<meta name="description" content="The new org chart for an agentic workforce. Vertical capability meets horizontal organisations. Kanban, kaizen, delegation, discernment, root-cause analysis. Building in public.">
-<meta name="author" content="Guy">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>orgchart.md</title>
+<meta name="description" content="A new org chart for an agentic workforce. The mismatch between vertical agent capability and horizontal organisations, the skills people need, and the management practices that have been forgotten.">
 <meta property="og:title" content="orgchart.md">
-<meta property="og:description" content="The new org chart for an agentic workforce.">
+<meta property="og:description" content="A new org chart for an agentic workforce.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://orgchart.md">
+<meta property="og:url" content="https://orgchart.md/">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="orgchart.md">
-<meta name="twitter:description" content="The new org chart for an agentic workforce.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='ui-monospace,monospace'%3E.md%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='6' y='18' width='88' height='64' rx='6' fill='none' stroke='%231a1a1a' stroke-width='6'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='44' font-family='ui-monospace,monospace' fill='%231a1a1a'%3E%3Ctspan fill='%23b14a2f'%3E.%3C/tspan%3Emd%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #faf9f6;
-    --ink: #1a1a1a;
-    --muted: #6a6a6a;
-    --rule: #e0ddd5;
-    --serif: ui-serif, Charter, "Iowan Old Style", "Source Serif Pro", Cambria, Georgia, serif;
-    --mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    --paper:   #faf9f6;
+    --paper-2: #f4f2ec;
+    --ink:     #1a1a1a;
+    --ink-2:   #3a3a3a;
+    --muted:   #6f6c64;
+    --rule:    #d6d2c8;
+    --rule-soft: #e8e5dc;
+    --mark:    oklch(0.55 0.12 30);
+    --new:     oklch(0.50 0.08 240);
+    --hold:    oklch(0.50 0.02 250);
+    --serif:   "Source Serif 4", ui-serif, Charter, "Iowan Old Style", "Source Serif Pro", Cambria, Georgia, serif;
+    --mono:    ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   }
-  * { box-sizing: border-box; }
-  html, body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--serif);
-    font-size: 18px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink); font-family: var(--serif);
+    font-size: 18px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;
   }
-  .wrap {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 4rem 1.5rem 6rem;
-  }
-  header {
-    margin-bottom: 4rem;
-    font-family: var(--mono);
-    font-size: 0.95rem;
-    color: var(--muted);
-    letter-spacing: 0.01em;
-  }
-  header .brand {
-    color: var(--ink);
-    font-weight: 500;
-  }
-  h1 {
-    font-size: 2rem;
-    line-height: 1.2;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    margin: 0 0 2rem;
-  }
-  p {
-    margin: 0 0 1.5rem;
-  }
-  p.closer {
-    font-weight: 600;
-    margin-top: 2.5rem;
-  }
-  footer {
-    margin-top: 5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--rule);
-    font-family: var(--mono);
-    font-size: 0.85rem;
-    color: var(--muted);
-  }
-  footer a {
-    color: var(--ink);
-    text-decoration: none;
+  ::selection { background: var(--ink); color: var(--paper); }
+  a { color: inherit; }
+
+  header.topbar {
     border-bottom: 1px solid var(--rule);
+    padding: 18px 28px;
+    display: flex; align-items: baseline; gap: 28px;
+    font-family: var(--mono); font-size: 14px; letter-spacing: 0.01em;
   }
-  footer a:hover {
-    border-color: var(--ink);
+  .brand {
+    display: inline-block;
+    border: 1.5px solid var(--ink); border-radius: 3px;
+    padding: 1px 8px 2px;
+    color: var(--ink); text-decoration: none; font-weight: 500;
   }
-  ::selection {
-    background: var(--ink);
-    color: var(--bg);
+  .brand .accent { color: var(--mark); }
+  nav.primary { display: flex; gap: 22px; flex-wrap: wrap; align-items: baseline; }
+  nav.primary a { color: var(--ink-2); text-decoration: none; padding: 2px 0; }
+  nav.primary a:hover, nav.primary a[aria-current="page"] {
+    color: var(--ink); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 4px;
   }
-  @media (max-width: 600px) {
-    html, body { font-size: 17px; }
-    .wrap { padding: 3rem 1.25rem 4rem; }
-    h1 { font-size: 1.6rem; }
-    header { margin-bottom: 3rem; }
+  nav.primary .meta-link { margin-left: auto; color: var(--muted); }
+
+  main.page { max-width: 920px; margin: 0 auto; padding: 64px 28px 96px; }
+
+  .masthead { margin-bottom: 56px; }
+  .vol {
+    font-family: var(--mono); font-size: 12px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 18px;
   }
+  h1.kicker {
+    font-family: "Caveat", cursive; font-weight: 600;
+    font-size: clamp(40px, 5.2vw, 68px); line-height: 1.05;
+    letter-spacing: 0; margin: 0; color: var(--mark);
+    text-wrap: balance;
+  }
+
+  .thesis {
+    border-top: 1px solid var(--rule);
+    padding-top: 32px; margin-bottom: 56px;
+    font-size: 19px; line-height: 1.55; text-wrap: pretty;
+  }
+  .thesis p { margin: 0 0 18px; }
+  .thesis p:last-child { margin-bottom: 0; }
+  @media (max-width: 720px) { .thesis { font-size: 17px; } }
+
+  section.contents { border-top: 1px solid var(--ink); padding-top: 18px; margin-bottom: 56px; }
+  section.contents .section-h {
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: var(--mono); font-size: 12px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px;
+  }
+  ol.entries { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  ol.entries li { border-top: 1px solid var(--rule); padding: 22px 0 26px; }
+  ol.entries li:nth-child(odd)  { padding-right: 28px; }
+  ol.entries li:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--rule); }
+  ol.entries .num {
+    font-family: var(--mono); font-size: 11px; color: var(--muted);
+    letter-spacing: 0.08em; margin-bottom: 4px;
+  }
+  ol.entries a.title {
+    display: inline-block; font-family: var(--serif); font-weight: 600;
+    font-size: 22px; line-height: 1.2; letter-spacing: -0.005em;
+    color: var(--ink); text-decoration: none; margin-bottom: 6px;
+  }
+  ol.entries a.title:hover { text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 4px; }
+  ol.entries .blurb { font-size: 15.5px; color: var(--ink-2); line-height: 1.45; margin: 0; max-width: 32ch; }
+  ol.entries .stat {
+    margin-top: 14px;
+    font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.04em;
+  }
+  ol.entries .stat .g { color: var(--ink-2); font-family: var(--mono); }
+  ol.entries .stat .g.weak { color: var(--mark); }
+  ol.entries .stat .g.new  { color: var(--new); }
+
+  section.delta { border-top: 1px solid var(--rule); padding-top: 18px; }
+  section.delta .section-h {
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: var(--mono); font-size: 12px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 18px;
+  }
+  section.delta .summary {
+    font-family: var(--mono); font-size: 13px; color: var(--ink-2);
+    margin-bottom: 22px; display: flex; gap: 18px; flex-wrap: wrap;
+  }
+  section.delta .summary .item .g {
+    display: inline-block; width: 14px; text-align: center;
+    color: var(--ink); font-weight: 600; margin-right: 2px;
+  }
+  section.delta .summary .item .g.weak { color: var(--mark); }
+  section.delta .summary .item .g.new  { color: var(--new); }
+  section.delta .summary .item .g.hold { color: var(--hold); }
+
+  ul.promotions { list-style: none; padding: 0; margin: 0; }
+  ul.promotions li {
+    padding: 14px 0; border-bottom: 1px dashed var(--rule);
+    display: grid; grid-template-columns: 22px 1fr auto; gap: 16px; align-items: baseline;
+  }
+  ul.promotions li:last-child { border-bottom: 0; }
+  ul.promotions .glyph { font-family: var(--mono); font-size: 16px; color: var(--ink); text-align: center; line-height: 1; }
+  ul.promotions .glyph.weak { color: var(--mark); }
+  ul.promotions .glyph.new  { color: var(--new); }
+  ul.promotions .glyph.hold { color: var(--hold); }
+  ul.promotions .body .t { font-family: var(--serif); font-size: 17px; line-height: 1.35; color: var(--ink); }
+  ul.promotions .body .meta {
+    margin-top: 4px; font-family: var(--mono); font-size: 11.5px; color: var(--muted); letter-spacing: 0.02em;
+  }
+  ul.promotions .body .meta .layer { color: var(--ink-2); }
+  ul.promotions .traj { font-family: var(--mono); font-size: 14px; color: var(--ink-2); white-space: nowrap; padding-left: 8px; }
+  ul.promotions .traj.down { color: var(--mark); }
+
+  footer.site {
+    max-width: 920px; margin: 0 auto;
+    padding: 32px 28px 64px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono); font-size: 12px; color: var(--muted);
+    display: flex; gap: 28px; flex-wrap: wrap; letter-spacing: 0.02em;
+  }
+  footer.site a { color: var(--ink-2); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 4px; }
+  footer.site .right { margin-left: auto; }
+
+  @media (max-width: 720px) {
+    header.topbar { padding: 14px 18px; gap: 14px; flex-direction: column; align-items: flex-start; }
+    nav.primary { gap: 16px; font-size: 13px; }
+    nav.primary .meta-link { margin-left: 0; }
+    main.page { padding: 40px 20px 64px; }
+    .masthead { margin-bottom: 40px; }
+    h1.kicker { font-size: 34px; }
+    .thesis { font-size: 17px; }
+    ol.entries { grid-template-columns: 1fr; }
+    ol.entries li:nth-child(odd), ol.entries li:nth-child(even) { padding: 22px 0 24px; border-left: 0; }
+    ul.promotions li { grid-template-columns: 18px 1fr; }
+    ul.promotions .traj { grid-column: 2; padding-left: 0; margin-top: 2px; }
+    footer.site { padding: 24px 20px 48px; flex-direction: column; gap: 8px; }
+    footer.site .right { margin-left: 0; }
+  }
+
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #1a1a1a;
-      --ink: #f0ede5;
-      --muted: #888683;
-      --rule: #2e2e2e;
+      --paper: #1a1a1a; --paper-2: #232323;
+      --ink: #f0ede5; --ink-2: #c8c5bc; --muted: #8a8780;
+      --rule: #2e2e2e; --rule-soft: #262626;
+      --mark: oklch(0.72 0.12 30); --new: oklch(0.72 0.08 240); --hold: oklch(0.62 0.02 250);
     }
   }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <span class="brand">orgchart.md</span>
-  </header>
-  <main>
-    <h1>A new org chart for agents?</h1>
-    <p>Agents work vertically; setting goals and integrating tasks from idea to completion. But organisations were designed horizontally; process maps, RACIs and risk registers, hand-offs and escalations.</p> 
-    <p>This mismatch is one of the biggest blockers we face trying to integrate agents into organisations.</p>
-    <p>The good news? The orgs winning with agents are using frameworks like kaizen, gaining from skills in delegation and discernment, running root-cause analysis to improve outcomes, building organisational memory from meetings transcripts and decision logs, and improving agent outputs from lessons learned.</p>
-    <p>And one of the biggest recent breakthroughs in Agent orchestration? Kanban boards!</p>
-    <p>Sound familiar?</p>
-    <p>Agent capabilities are growing at an exponential rate that can feel dizzying, but dusting off the practices of lean, agile, and well-established leadership practice is what's working.</p>
-    <p class="closer">A new org chart for agents?</p>
-    <p>You've (already) got this. 👊 🤖.</p>
-  </main>
-  <footer.
-    Verfasst von Guy.
-  </footer>
-</div>
+
+<header class="topbar">
+  <a class="brand" href="/" aria-label="orgchart.md home">orgchart<span class="accent">.</span>md</a>
+  <nav class="primary" aria-label="Primary">
+    <a href="diagnosis.html">diagnosis</a>
+    <a href="skills.html">skills</a>
+    <a href="infrastructure.html">infrastructure</a>
+    <a class="meta-link" href="how-this-works.html">how this works</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="masthead">
+    <div class="vol">vol. 01 · 2026</div>
+    <h1 class="kicker">The new org chart for agents?</h1>
+  </div>
+
+  <section class="thesis">
+    <p>Agents increasingly work vertically; integrating sophisticated tasks from idea to deployment, while our organisations were designed horizontally; task distribution, reviews, sign-offs, and steercos. That mismatch is the biggest blocker organisations face when trying to absorb the exponential capability of agents.</p>
+    <p>However, the orgs seeing success are using kanban and kaizen, building skills in delegation and discernment, running root-cause analysis, and growing organisational memory from conversations and actions. Sound familiar? It should, because the new org chart for agents dusts off the practices of lean, agile, and well-established leadership principles.</p>
+    <p>This site examines this as 3-part framework: <a href="diagnosis.html">diagnosis</a>, <a href="skills.html">skills</a>, and <a href="infrastructure.html">infrastructure</a>. Underneath each one, evidence as it shows up in the wild. Some of what gets collected supports the framework; some of it pushes back. Both get logged so you can see how the argument is holding up over time.</p>
+  </section>
+
+  <section class="contents" aria-labelledby="contents-h">
+    <div class="section-h">
+      <span id="contents-h">The framework</span>
+    </div>
+    <ol class="entries">
+      <li>
+        <div class="num">01</div>
+        <a class="title" href="diagnosis.html">The diagnosis</a>
+        <p class="blurb">Agents' capabilities are increasing exponentially. Can organisations cope?</p>
+        <div class="stat">5 items · <span class="g">+</span>4 <span class="g weak">−</span>1</div>
+      </li>
+      <li>
+        <div class="num">02</div>
+        <a class="title" href="skills.html">What people need</a>
+        <p class="blurb">New skills, but also a new challenge.</p>
+        <div class="stat">3 items · <span class="g">+</span>2 <span class="g new">·</span>1</div>
+      </li>
+      <li>
+        <div class="num">03</div>
+        <a class="title" href="infrastructure.html">Management as infrastructure</a>
+        <p class="blurb">The forgotten management practices that help agents thrive.</p>
+        <div class="stat">6 items · <span class="g">+</span>4 <span class="g weak">−</span>2</div>
+      </li>
+      <li>
+        <div class="num">04</div>
+        <a class="title" href="how-this-works.html">How this works</a>
+        <p class="blurb">See how the agents powering this site are applying this framework.</p>
+        <div class="stat">daily triage · quarterly trajectory</div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="delta" aria-labelledby="delta-h">
+    <div class="section-h">
+      <span id="delta-h">This week's analysis</span>
+      <span>updated 12 may 2026</span>
+    </div>
+    <div class="summary">
+      <span class="item"><span class="g">+</span>2 strengthening</span>
+      <span class="item"><span class="g weak">−</span>2 weakening</span>
+      <span class="item"><span class="g new">·</span>1 new</span>
+      <span class="item"><span class="g hold">=</span>0 holding</span>
+    </div>
+    <ul class="promotions">
+      <li>
+        <span class="glyph" title="strengthening">+</span>
+        <div class="body">
+          <div class="t">Shopify River ran with 5,938 employees across 4,450 channels; merge rate climbed 36% to 77% over two months, attributed to people watching River work, not model upgrades.</div>
+          <div class="meta"><span class="layer">diagnosis</span> · evidence · tobi lutke, shopify, 09 may 2026</div>
+        </div>
+        <span class="traj" aria-label="rising">↑</span>
+      </li>
+      <li>
+        <span class="glyph weak" title="weakening">−</span>
+        <div class="body">
+          <div class="t">deVadoss's 10K-task benchmark: design-quality dominates governance; the control-heavy / design-poor configuration ranks fourth of five.</div>
+          <div class="meta"><span class="layer">infrastructure</span> · evidence · arXiv, 12 may 2026</div>
+        </div>
+        <span class="traj" aria-label="too new to chart">—</span>
+      </li>
+      <li>
+        <span class="glyph" title="strengthening">+</span>
+        <div class="body">
+          <div class="t">Constraint Drift formalised: safety-critical constraints degrade through delegation, communication, and audit; accountability infrastructure has to be load-bearing.</div>
+          <div class="meta"><span class="layer">infrastructure</span> · evidence · li et al, arXiv, 12 may 2026</div>
+        </div>
+        <span class="traj" aria-label="too new to chart">—</span>
+      </li>
+      <li>
+        <span class="glyph new" title="new pattern">·</span>
+        <div class="body">
+          <div class="t">Lehrwerkstatt: public-channel deployment reasserts apprenticeship dynamics; juniors learn by watching the agent work alongside seniors.</div>
+          <div class="meta"><span class="layer">skills</span> · illustration · tobi lutke, shopify, 09 may 2026</div>
+        </div>
+        <span class="traj" aria-label="too new to chart">—</span>
+      </li>
+      <li>
+        <span class="glyph weak" title="weakening">−</span>
+        <div class="body">
+          <div class="t">Citadel data: jobs in highly AI-exposed occupations are rising, not falling. Software engineering postings up 18% YoY.</div>
+          <div class="meta"><span class="layer">diagnosis</span> · evidence · azeem azhar, exponential view, 10 may 2026</div>
+        </div>
+        <span class="traj" aria-label="holding">↔</span>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site">
+  <span>building in public</span>
+  <span>last render · 2026-05-12</span>
+  <span class="right"><a href="https://github.com/participo/orgchart-md">source</a></span>
+</footer>
+
 </body>
 </html>

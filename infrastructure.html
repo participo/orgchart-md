@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Management as infrastructure · orgchart.md</title>
+<meta name="description" content="Layer 03: The forgotten operating system. Evidence and counter-evidence for the management-as-infrastructure claim, kept in one view.">
+<meta property="og:title" content="Management as infrastructure · orgchart.md">
+<meta property="og:description" content="The forgotten operating system. Evidence and counter-evidence, in one view.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://orgchart.md/infrastructure">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='6' y='18' width='88' height='64' rx='6' fill='none' stroke='%231a1a1a' stroke-width='6'/%3E%3Ctext x='50' y='65' text-anchor='middle' font-size='44' font-family='ui-monospace,monospace' fill='%231a1a1a'%3E%3Ctspan fill='%23b14a2f'%3E.%3C/tspan%3Emd%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:   #faf9f6;
+    --paper-2: #f4f2ec;
+    --ink:     #1a1a1a;
+    --ink-2:   #3a3a3a;
+    --muted:   #6f6c64;
+    --rule:    #d6d2c8;
+    --rule-soft: #e8e5dc;
+    --mark:    oklch(0.55 0.12 30);
+    --supp:    oklch(0.48 0.08 150);
+    --new:     oklch(0.50 0.08 240);
+    --hold:    oklch(0.50 0.02 250);
+    --serif:   "Source Serif 4", ui-serif, Charter, "Iowan Old Style", Georgia, serif;
+    --mono:    ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 18px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--ink); color: var(--paper); }
+  a { color: inherit; }
+  header.topbar { border-bottom: 1px solid var(--rule); padding: 18px 28px; display: flex; align-items: baseline; gap: 28px; font-family: var(--mono); font-size: 14px; letter-spacing: 0.01em; }
+  .brand { display: inline-block; border: 1.5px solid var(--ink); border-radius: 3px; padding: 1px 8px 2px; color: var(--ink); text-decoration: none; font-weight: 500; }
+  .brand .accent { color: var(--mark); }
+  nav.primary { display: flex; gap: 22px; flex-wrap: wrap; align-items: baseline; }
+  nav.primary a { color: var(--ink-2); text-decoration: none; padding: 2px 0; }
+  nav.primary a:hover, nav.primary a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 4px; }
+  nav.primary .meta-link { margin-left: auto; color: var(--muted); }
+  main.page { max-width: 1080px; margin: 0 auto; padding: 56px 28px 96px; }
+  .layer-head { margin-bottom: 56px; }
+  .eyebrow { font-family: var(--mono); font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 18px; }
+  h1.claim { font-family: "Caveat", cursive; font-weight: 600; font-style: normal; font-size: clamp(38px, 5vw, 60px); line-height: 1.05; letter-spacing: 0; margin: 0 0 24px; color: var(--mark); text-wrap: balance; }
+  .prose { font-size: 19px; line-height: 1.55; text-wrap: pretty; }
+  .prose p { margin: 0 0 18px; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose strong { font-weight: 600; }
+  .section-h { display: flex; align-items: baseline; justify-content: space-between; border-top: 1px solid var(--ink); padding-top: 16px; margin-bottom: 24px; font-family: var(--mono); font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; gap: 16px; flex-wrap: wrap; }
+  .section-h .h-title { color: var(--ink-2); }
+  .section-h .count { font-feature-settings: "tnum"; }
+  .section-h .count .g { display: inline-block; min-width: 12px; text-align: center; color: var(--ink); font-weight: 600; margin: 0 2px 0 6px; }
+  .section-h .count .g.weak { color: var(--mark); }
+  .section-h .count .g.new  { color: var(--new); }
+  .section-h .count .g.hold { color: var(--hold); }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-bottom: 56px; }
+  .split > .col { padding: 0 28px 0 0; }
+  .split > .col + .col { padding: 0 0 0 28px; border-left: 1px solid var(--rule); }
+  .col-h { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+  .col-h .name { font-family: var(--mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; display: inline-flex; align-items: center; gap: 8px; color: var(--ink); }
+  .col-h .name .g { font-family: var(--mono); font-size: 17px; line-height: 1; font-weight: 600; display: inline-block; min-width: 14px; text-align: center; color: var(--supp); }
+  .col-h.weak .name .g { color: var(--mark); }
+  .item-meta .tag .g { color: var(--supp); }
+  .col-h .n { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.04em; }
+  ul.items { list-style: none; padding: 0; margin: 0; }
+  ul.items > li { padding: 18px 0; border-bottom: 1px dashed var(--rule); }
+  ul.items > li:last-child { border-bottom: 0; }
+  .item-top { display: flex; align-items: baseline; gap: 10px; font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 6px; }
+  .item-top .src { color: var(--ink-2); }
+  .item-top .sep { color: var(--rule); }
+  .item-title { font-family: var(--serif); font-weight: 600; font-size: 17px; line-height: 1.3; letter-spacing: -0.005em; color: var(--ink); margin: 0 0 6px; text-wrap: pretty; }
+  .item-title a { color: inherit; text-decoration: none; }
+  .item-title a:hover { text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px; }
+  .item-title a::after { content: " ↗"; font-family: var(--mono); font-size: 0.8em; color: var(--muted); margin-left: 2px; }
+  .item-summary { font-family: var(--serif); font-size: 16px; color: var(--ink-2); line-height: 1.45; margin: 0 0 10px; text-wrap: pretty; }
+  .item-meta { display: flex; gap: 14px; align-items: baseline; font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.02em; flex-wrap: wrap; }
+  .item-meta .tag { display: inline-flex; align-items: baseline; gap: 6px; color: var(--ink-2); }
+  .item-meta .tag .g { font-family: var(--mono); font-weight: 600; min-width: 10px; text-align: center; color: var(--ink); }
+  .item-meta .tag.weak .g { color: var(--mark); }
+  .item-meta .tag.new  .g { color: var(--new); }
+  .item-meta .tag.hold .g { color: var(--hold); }
+  .item-meta .traj { color: var(--ink-2); }
+  .item-meta .traj.down { color: var(--mark); }
+  .item-meta .date { color: var(--muted); margin-left: auto; }
+  .layer-nav { border-top: 1px solid var(--rule); padding-top: 28px; margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; font-family: var(--mono); font-size: 13px; }
+  .layer-nav .lbl { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+  .layer-nav a { color: var(--ink); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 4px; }
+  .layer-nav .next { text-align: right; }
+  footer.site { max-width: 1080px; margin: 0 auto; padding: 32px 28px 64px; border-top: 1px solid var(--rule); font-family: var(--mono); font-size: 12px; color: var(--muted); display: flex; gap: 28px; flex-wrap: wrap; letter-spacing: 0.02em; }
+  footer.site a { color: var(--ink-2); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 4px; }
+  footer.site .right { margin-left: auto; }
+  @media (max-width: 820px) {
+    header.topbar { padding: 14px 18px; gap: 14px; flex-direction: column; align-items: flex-start; }
+    nav.primary { gap: 16px; font-size: 13px; }
+    nav.primary .meta-link { margin-left: 0; }
+    main.page { padding: 36px 20px 64px; }
+    .layer-head { margin-bottom: 40px; }
+    h1.claim { font-size: 28px; max-width: none; }
+    .prose { font-size: 17px; }
+    .split { grid-template-columns: 1fr; gap: 0; }
+    .split > .col, .split > .col + .col { padding: 0; border-left: 0; }
+    .split > .col + .col { border-top: 1px solid var(--ink); padding-top: 24px; margin-top: 32px; }
+    .item-meta .date { margin-left: 0; flex-basis: 100%; }
+    .layer-nav { grid-template-columns: 1fr; }
+    .layer-nav .next { text-align: left; }
+    footer.site { padding: 24px 20px 48px; flex-direction: column; gap: 8px; }
+    footer.site .right { margin-left: 0; }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #1a1a1a; --paper-2: #232323; --ink: #f0ede5; --ink-2: #c8c5bc; --muted: #8a8780;
+      --rule: #2e2e2e; --rule-soft: #262626;
+      --mark: oklch(0.72 0.12 30); --supp: oklch(0.72 0.10 150); --new: oklch(0.72 0.08 240); --hold: oklch(0.62 0.02 250);
+    }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="orgchart.md home">orgchart<span class="accent">.</span>md</a>
+  <nav class="primary" aria-label="Primary">
+    <a href="diagnosis.html">diagnosis</a>
+    <a href="skills.html">skills</a>
+    <a href="infrastructure.html" aria-current="page">infrastructure</a>
+    <a class="meta-link" href="how-this-works.html">how this works</a>
+  </nav>
+</header>
+
+<main class="page">
+
+  <div class="layer-head">
+    <div class="eyebrow">layer 03 · management as infrastructure</div>
+    <h1 class="claim">The forgotten operating system</h1>
+    <div class="prose">
+      <p>Let's look at what frontier agentic teams are building around their agents...kanban boards! Persistent memory stores. Root-cause analysis on failures. Explicit handoff protocols. Delegation contracts with scope boundaries. Memory reviews. Specs and runbooks as durable artefacts. None of this is new. These are the working artefacts of late-20th-century operational management, running at machine speed.</p>
+      <p>The frontier firms are rediscovering practices most organisations let atrophy. Most managers have never practiced Agile, and even fewer were taught lean practices. The lean wave of the 1990s and 2000s produced a generation of operationally literate managers. The software and agile wave that followed reframed much of that as old-fashioned.</p>
+      <p>Lean and agile weren't invented to manage agents. They were invented to manage work across people and machines under uncertainty, where production was faster than coordination could keep up; the conditions agentic teams now operate in. Visible work-in-progress on a board. Standard work that anyone can pick up. Root-cause analysis when something fails. Memory that survives the people who built it. Without that operational substrate, agents amplify whatever's already broken in the organisation. With it, agent throughput compounds into capability that super powers a team's work.</p>
+      <p>Will "dusting off" lean and agile practices unleash new agent capabilities? Here's where the evidence is stacking up.</p>
+    </div>
+  </div>
+
+  <section aria-labelledby="evidence-h">
+    <div class="section-h">
+      <span class="h-title" id="evidence-h">Evidence &amp; illustration</span>
+      <span class="count">
+        6 items
+        <span class="g">+</span>4
+        <span class="g weak">−</span>2
+      </span>
+    </div>
+
+    <div class="split">
+
+      <div class="col">
+        <div class="col-h">
+          <span class="name"><span class="g">+</span>supports the claim</span>
+          <span class="n">4 items</span>
+        </div>
+        <ul class="items">
+
+          <li>
+            <div class="item-top"><span class="src">Mario Hayashi</span><span class="sep">·</span><span class="type">illustration</span></div>
+            <h3 class="item-title"><a href="https://blog.mariohayashi.com/p/the-factory-must-grow-part-iii-stopping">Developer applies Jidoka, Poka yoke, Andon, Muda, and Five Whys by name to AI agent failures.</a></h3>
+            <p class="item-summary">After silent-drop failures in his agent orchestration system, applies Toyota Production System principles directly. Explicit Taiichi Ohno citation; explicit choice of TPS over generic DevOps. Cleanest single public artefact of the rediscovery thesis in practice: one developer naming the lineage and applying it.</p>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
+              <span class="traj" aria-label="rising">↑ rising</span>
+              <span class="date">04 may 2026</span>
+            </div>
+          </li>
+
+          <li>
+            <div class="item-top"><span class="src">David Rice, People Managing People</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://peoplemanagingpeople.com/hr-operations/ai-operational-discipline/">"AI is the reward for operational discipline, but it won't create it."</a></h3>
+            <p class="item-summary">Argues that the obstacles blocking AI value predate AI by decades: executive buy-in, data quality, governance, siloed teams, misaligned incentives. The same headline conclusion as orgchart.md, arrived at via a data-governance framing rather than a lean lineage. Independent arrival at the same conclusion from different reasoning; the pattern is detectable from multiple vantage points.</p>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
+              <span class="traj" aria-label="holding">↔ holding</span>
+              <span class="date">06 apr 2026</span>
+            </div>
+          </li>
+
+          <li>
+            <div class="item-top"><span class="src">Li et al., arXiv cs.MA</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://arxiv.org/abs/2605.10481">Safe multi-agent behaviour must be maintained, not merely asserted: constraint drift in LLM-based multi-agent systems.</a></h3>
+            <p class="item-summary">Names <em>constraint drift</em> as the common structure behind emerging failures: the loss, distortion, weakening, or relaxation of safety-critical constraints as they pass through memory, delegation, communication, tool use, audit, and optimisation. Proposes <em>Constraint State Governance</em> — constraints as explicit execution state. Direct research-side underwriting of the claim that accountability infrastructure must be load-bearing rather than decorative.</p>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
+              <span class="traj" aria-label="too new to chart">— too new to chart</span>
+              <span class="date">12 may 2026</span>
+            </div>
+          </li>
+
+          <li>
+            <div class="item-top"><span class="src">Tobi Lutke, Shopify</span><span class="sep">·</span><span class="type">illustration</span></div>
+            <h3 class="item-title"><a href="https://x.com/tobi">"The speed of an organisation is set by the speed of its lowest-bandwidth communication channel and rhythm."</a></h3>
+            <p class="item-summary">Lutke's longstanding principle, restated in the River writeup, positions alongside Ashby's Law of Requisite Variety as a systems-level governor on organisational throughput. Supplies the structural reason public-by-default deployment outperforms private/DM-based deployment at firm scale. Diagnostic question: which channel is the rate-limiting step in this organisation's decision diffusion?</p>
+            <div class="item-meta">
+              <span class="tag new"><span class="g">·</span>new</span>
+              <span class="traj" aria-label="too new to chart">— too new to chart</span>
+              <span class="date">09 may 2026</span>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="col">
+        <div class="col-h weak">
+          <span class="name"><span class="g">−</span>challenges the claim</span>
+          <span class="n">2 items</span>
+        </div>
+        <ul class="items">
+
+          <li>
+            <div class="item-top"><span class="src">Masters &amp; Albrecht et al., DeepFlow / arXiv</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://arxiv.org/abs/2510.02557">Assign-All baseline outperforms chain-of-thought management 0.502 to 0.313 across twenty enterprise workflows.</a></h3>
+            <p class="item-summary">"Managerial interventions can sometimes be actively detrimental." Direct counter-evidence to a naïve reading of management as infrastructure as "do more management." The same paper finds CoT retains the advantage on documentation- and audit-heavy workflows. Sharpens rather than refutes the claim: different work shapes have different optimal management densities; the diagnostic question is action-heavy or documentation-heavy. The framework's v2 has absorbed the correction.</p>
+            <div class="item-meta">
+              <span class="tag weak"><span class="g">−</span>weakening</span>
+              <span class="traj" aria-label="rising">↑ rising</span>
+              <span class="date">oct 2025</span>
+            </div>
+          </li>
+
+          <li>
+            <div class="item-top"><span class="src">John deVadoss, arXiv cs.MA</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://arxiv.org/abs/2605.08258">CEAD: design quality dominates governance in agent architecture outcomes across a 10K-task benchmark.</a></h3>
+            <p class="item-summary">Capability-aligned design 70.6% safe success; control-heavy / design-poor grid 50.8% (fourth of five). The thesis: governance, security, policy, audit, and assurance should support good design rather than substitute for it. The control-heavy/design-poor configuration is the closest analogue to "bolt a manager agent and audit trail on top of an undesigned agent estate"; it ranks fourth out of five. Pulls in the same direction as Masters/Albrecht; the framework should fold in <em>design first, governance second</em>.</p>
+            <div class="item-meta">
+              <span class="tag weak"><span class="g">−</span>weakening</span>
+              <span class="traj" aria-label="too new to chart">— too new to chart</span>
+              <span class="date">12 may 2026</span>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <nav class="layer-nav" aria-label="Layer navigation">
+    <div class="prev">
+      <div class="lbl">02 skills</div>
+      <a href="skills.html">← what people need</a>
+    </div>
+    <div class="next">
+      <div class="lbl">meta</div>
+      <a href="how-this-works.html">how this works →</a>
+    </div>
+  </nav>
+
+</main>
+
+<footer class="site">
+  <span>building in public</span>
+  <span>last render · 2026-05-12</span>
+  <span class="right"><a href="https://github.com/participo/orgchart-md">source</a></span>
+</footer>
+
+</body>
+</html>
