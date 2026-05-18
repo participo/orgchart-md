@@ -72,6 +72,11 @@
   ul.items { list-style: none; padding: 0; margin: 0; }
   ul.items > li { padding: 18px 0; border-bottom: 1px dashed var(--rule); }
   ul.items > li:last-child { border-bottom: 0; }
+  ul.items > li.tier-2 { padding: 14px 0; }
+  ul.items > li.tier-3 { padding: 10px 0; }
+  ul.items > li.tier-3 .item-top { margin-bottom: 2px; }
+  ul.items > li.tier-3 .item-title { font-size: 15px; font-weight: 500; margin: 0; }
+  ul.items > li.tier-3 .item-meta { margin-top: 4px; }
   .item-top { display: flex; align-items: baseline; gap: 10px; font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 6px; }
   .item-top .src { color: var(--ink-2); }
   .item-top .sep { color: var(--rule); }
@@ -151,8 +156,8 @@
     <div class="section-h">
       <span class="h-title" id="evidence-h">Evidence &amp; illustration</span>
       <span class="count">
-        8 items
-        <span class="g">+</span>5
+        9 items
+        <span class="g">+</span>6
         <span class="g weak">−</span>3
       </span>
     </div>
@@ -162,62 +167,69 @@
       <div class="col">
         <div class="col-h">
           <span class="name"><span class="g">+</span>supports the claim</span>
-          <span class="n">5 items</span>
+          <span class="n">6 items</span>
         </div>
         <ul class="items">
 
           <li>
-            <div class="item-top"><span class="src">Mario Hayashi</span><span class="sep">·</span><span class="type">illustration</span></div>
-            <h3 class="item-title"><a href="https://blog.mariohayashi.com/p/the-factory-must-grow-part-iii-stopping">Developer applies Jidoka, Poka yoke, Andon, Muda, and Five Whys by name to AI agent failures.</a></h3>
-            <p class="item-summary">After silent-drop failures in his agent orchestration system, applies Toyota Production System principles directly. Explicit Taiichi Ohno citation; explicit choice of TPS over generic DevOps. Cleanest single public artefact of the rediscovery thesis in practice: one developer naming the lineage and applying it.</p>
-            <div class="item-meta">
-              <span class="tag"><span class="g">+</span>strengthening</span>
-              <span class="traj" aria-label="rising">↑ rising</span>
-              <span class="date">04 may 2026</span>
-            </div>
-          </li>
-
-          <li>
-            <div class="item-top"><span class="src">David Rice, People Managing People</span><span class="sep">·</span><span class="type">evidence</span></div>
-            <h3 class="item-title"><a href="https://peoplemanagingpeople.com/hr-operations/ai-operational-discipline/">"AI is the reward for operational discipline, but it won't create it."</a></h3>
-            <p class="item-summary">Argues that the obstacles blocking AI value predate AI by decades: executive buy-in, data quality, governance, siloed teams, misaligned incentives. The same headline conclusion as orgchart.md, arrived at via a data-governance framing rather than a lean lineage. Independent arrival at the same conclusion from different reasoning; the pattern is detectable from multiple vantage points.</p>
-            <div class="item-meta">
-              <span class="tag"><span class="g">+</span>strengthening</span>
-              <span class="traj" aria-label="holding">↔ holding</span>
-              <span class="date">06 apr 2026</span>
-            </div>
-          </li>
-
-          <li>
-            <div class="item-top"><span class="src">Li et al., arXiv cs.MA</span><span class="sep">·</span><span class="type">evidence</span></div>
-            <h3 class="item-title"><a href="https://arxiv.org/abs/2605.10481">Safe multi-agent behaviour must be maintained, not merely asserted: constraint drift in LLM-based multi-agent systems.</a></h3>
-            <p class="item-summary">Names <em>constraint drift</em> as the common structure behind emerging failures: the loss, distortion, weakening, or relaxation of safety-critical constraints as they pass through memory, delegation, communication, tool use, audit, and optimisation. Proposes <em>Constraint State Governance</em> — constraints as explicit execution state. Direct research-side underwriting of the claim that accountability infrastructure must be load-bearing rather than decorative.</p>
+            <div class="item-top"><span class="src">John Cutler, The Beautiful Mess</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://cutlefish.substack.com/p/tbm-422-exception-presence-delegation">TBM 422: Exception, Presence, Delegation as the three-motion working repertoire of management as infrastructure.</a></h3>
+            <p class="item-summary">Cutler proposes a three-motion triad as the back-to-basics management vocabulary the agentic moment calls for. Exception-based systems flag deviation from baseline and learn from the exceptions themselves; presence-based work transfers tacit knowledge that documentation cannot capture; delegation pushes authority to information rather than information to authority. The three create a virtuous loop and each fails when run without the other two; Mulally at Ford, Chesky at Airbnb, and Huang at Nvidia are the worked examples.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
               <span class="traj" aria-label="too new to chart">— too new to chart</span>
-              <span class="date">12 may 2026</span>
+              <span class="date">16 may 2026</span>
             </div>
           </li>
 
           <li>
-            <div class="item-top"><span class="src">Tobi Lutke, Shopify</span><span class="sep">·</span><span class="type">illustration</span></div>
-            <h3 class="item-title"><a href="https://x.com/tobi/status/2053121182044451016">"The speed of an organisation is set by the speed of its lowest-bandwidth communication channel and rhythm."</a></h3>
-            <p class="item-summary">Lutke's longstanding principle, restated in the River writeup, positions alongside Ashby's Law of Requisite Variety as a systems-level governor on organisational throughput. Supplies the structural reason public-by-default deployment outperforms private/DM-based deployment at firm scale. Diagnostic question: which channel is the rate-limiting step in this organisation's decision diffusion?</p>
+            <div class="item-top"><span class="src">Mike Krieger, Anthropic CPO</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://sources.news/p/anthropic-mike-krieger-interview-future-claude-ai">"Anthropic is shipping our harness strategy, not a product."</a></h3>
+            <p class="item-summary">Krieger names the current split between Claude AI, Cowork, and Claude Code as "a broken abstraction we need to fix" and frames Anthropic's posture as shipping the harness rather than the model. The platform-side correlate of the operating-substrate claim: agent plus canvas as the unit of work, MCP as the distribution channel, screenshot-verification as a substrate primitive. Two operational details strengthen Layer 3 directly: Anthropic Labs runs two-week sprints, and the team is composed mostly of former founders.</p>
             <div class="item-meta">
-              <span class="tag new"><span class="g">·</span>new</span>
+              <span class="tag"><span class="g">+</span>strengthening</span>
               <span class="traj" aria-label="too new to chart">— too new to chart</span>
-              <span class="date">09 may 2026</span>
+              <span class="date">15 may 2026</span>
             </div>
           </li>
 
           <li>
             <div class="item-top"><span class="src">Helm, Priebe, Duderstadt, arXiv cs.MA</span><span class="sep">·</span><span class="type">evidence</span></div>
             <h3 class="item-title"><a href="https://arxiv.org/abs/2605.11135">Adaptive control charts extend lean/SPC to multi-agent LLMs, exposing a fundamental learn-versus-monitor tradeoff.</a></h3>
-            <p class="item-summary">Adaptive control charts proven necessary for monitoring agents that learn, and proven susceptible to adversaries that defect slowly. The paper's closing finding: <em>either agents in a system cannot learn, or the system is susceptible to adversaries</em>. Direct research-side underwriting of the claim that classical operational primitives transfer with adaptation; also a sharper articulation of the irreducible-error-rate edge the framework already names. The first paper the feed has surfaced that names an inescapable Layer 3 limit.</p>
+            <p class="item-summary">Adaptive control charts proven necessary for monitoring agents that learn, and proven susceptible to adversaries that defect slowly. The paper's closing finding: <em>either agents in a system cannot learn, or the system is susceptible to adversaries</em>. Direct research-side underwriting of the claim that classical operational primitives transfer with adaptation; also a sharper articulation of the irreducible-error-rate edge the framework already names.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
               <span class="traj" aria-label="too new to chart">— too new to chart</span>
               <span class="date">13 may 2026</span>
+            </div>
+          </li>
+
+          <li class="tier-2">
+            <div class="item-top"><span class="src">Li et al., arXiv cs.MA</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://arxiv.org/abs/2605.10481">Constraint drift formalised: safety-critical constraints degrade through memory, delegation, communication, audit, and optimisation.</a></h3>
+            <p class="item-summary">Names <em>Constraint State Governance</em>: constraints carried as explicit execution state so accountability mechanisms can be enforced rather than just declared.</p>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
+              <span class="date">12 may 2026</span>
+            </div>
+          </li>
+
+          <li class="tier-2">
+            <div class="item-top"><span class="src">Mario Hayashi</span><span class="sep">·</span><span class="type">illustration</span></div>
+            <h3 class="item-title"><a href="https://blog.mariohayashi.com/p/the-factory-must-grow-part-iii-stopping">Developer applies Jidoka, Poka yoke, Andon, Muda, and Five Whys by name to AI agent failures.</a></h3>
+            <p class="item-summary">After silent-drop failures in his agent orchestration system, applies Toyota Production System principles directly. Cleanest single public artefact of the rediscovery thesis in practice.</p>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
+              <span class="date">04 may 2026</span>
+            </div>
+          </li>
+
+          <li class="tier-3">
+            <div class="item-top"><span class="src">David Rice, People Managing People</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://peoplemanagingpeople.com/hr-operations/ai-operational-discipline/">"AI is the reward for operational discipline, but it won't create it."</a></h3>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
+              <span class="date">06 apr 2026</span>
             </div>
           </li>
 
@@ -232,28 +244,6 @@
         <ul class="items">
 
           <li>
-            <div class="item-top"><span class="src">Masters &amp; Albrecht et al., DeepFlow / arXiv</span><span class="sep">·</span><span class="type">evidence</span></div>
-            <h3 class="item-title"><a href="https://arxiv.org/abs/2510.02557">Assign-All baseline outperforms chain-of-thought management 0.502 to 0.313 across twenty enterprise workflows.</a></h3>
-            <p class="item-summary">"Managerial interventions can sometimes be actively detrimental." Direct counter-evidence to a naïve reading of management as infrastructure as "do more management." Sharpens rather than refutes the claim: heavy-management prescriptions can backfire, and the right operational substrate depends on the shape of the work.</p>
-            <div class="item-meta">
-              <span class="tag weak"><span class="g">−</span>weakening</span>
-              <span class="traj" aria-label="rising">↑ rising</span>
-              <span class="date">oct 2025</span>
-            </div>
-          </li>
-
-          <li>
-            <div class="item-top"><span class="src">John deVadoss, arXiv cs.MA</span><span class="sep">·</span><span class="type">evidence</span></div>
-            <h3 class="item-title"><a href="https://arxiv.org/abs/2605.08258">CEAD: design quality dominates governance in agent architecture outcomes across a 10K-task benchmark.</a></h3>
-            <p class="item-summary">Capability-aligned design 70.6% safe success; control-heavy / design-poor grid 50.8% (fourth of five). The thesis: governance, security, policy, audit, and assurance should support good design rather than substitute for it. The control-heavy/design-poor configuration is the closest analogue to "bolt a manager agent and audit trail on top of an undesigned agent estate"; it ranks fourth out of five. Pulls in the same direction as Masters/Albrecht; the framework should fold in <em>design first, governance second</em>.</p>
-            <div class="item-meta">
-              <span class="tag weak"><span class="g">−</span>weakening</span>
-              <span class="traj" aria-label="too new to chart">— too new to chart</span>
-              <span class="date">12 may 2026</span>
-            </div>
-          </li>
-
-          <li>
             <div class="item-top"><span class="src">SkillSafetyBench authors, arXiv cs.AI / cs.MA</span><span class="sep">·</span><span class="type">evidence</span></div>
             <h3 class="item-title"><a href="https://arxiv.org/abs/2605.12015">Even with benign user requests, task-relevant skill materials can steer agents toward unsafe actions.</a></h3>
             <p class="item-summary">155 adversarial cases across 47 tasks, 6 risk domains, 30 safety categories, multiple CLI agents and model backends. <em>"Localized non-user attacks can consistently induce unsafe behavior, with distinct failure patterns across domains, attack methods, and scaffold-model pairings."</em> Direct counter-evidence to the framework's assumption that markdown skill files are neutral durable carriers. The properties that make skill files durable (text, addressable, transferable, consumed by downstream computation) make them a transferable attack surface. The Layer 3 prescription needs a trust discipline for skill files that has no clean late-20th-century antecedent; the closest analogue is dependency hygiene in software supply chains, itself a 21st-century discipline still being figured out.</p>
@@ -261,6 +251,25 @@
               <span class="tag weak"><span class="g">−</span>weakening</span>
               <span class="traj" aria-label="too new to chart">— too new to chart</span>
               <span class="date">13 may 2026</span>
+            </div>
+          </li>
+
+          <li class="tier-2">
+            <div class="item-top"><span class="src">John deVadoss, arXiv cs.MA</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://arxiv.org/abs/2605.08258">CEAD: design quality dominates governance in agent architecture outcomes across a 10K-task benchmark.</a></h3>
+            <p class="item-summary">Capability-aligned design beats control-heavy / design-poor architectures (70.6% vs 50.8% safe success); pulls the framework toward <em>design first, governance second</em>.</p>
+            <div class="item-meta">
+              <span class="tag weak"><span class="g">−</span>weakening</span>
+              <span class="date">12 may 2026</span>
+            </div>
+          </li>
+
+          <li class="tier-3">
+            <div class="item-top"><span class="src">Masters &amp; Albrecht et al., DeepFlow / arXiv</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://arxiv.org/abs/2510.02557">Assign-All baseline outperforms chain-of-thought management 0.502 to 0.313 across twenty enterprise workflows.</a></h3>
+            <div class="item-meta">
+              <span class="tag weak"><span class="g">−</span>weakening</span>
+              <span class="date">oct 2025</span>
             </div>
           </li>
 
@@ -285,7 +294,7 @@
 
 <footer class="site">
   <span>building in public</span>
-  <span>last render · 2026-05-13</span>
+  <span>last render · 2026-05-18</span>
 </footer>
 
 </body>

@@ -192,6 +192,11 @@
     border-bottom: 1px dashed var(--rule);
   }
   ul.items > li:last-child { border-bottom: 0; }
+  ul.items > li.tier-2 { padding: 14px 0; }
+  ul.items > li.tier-3 { padding: 10px 0; }
+  ul.items > li.tier-3 .item-top { margin-bottom: 2px; }
+  ul.items > li.tier-3 .item-title { font-size: 15px; font-weight: 500; margin: 0; }
+  ul.items > li.tier-3 .item-meta { margin-top: 4px; }
   ul.items > li.empty {
     color: var(--muted);
     font-style: italic;
@@ -405,35 +410,13 @@
         <ul class="items">
 
           <li>
-            <div class="item-top"><span class="src">Tobi Lutke, Shopify</span><span class="sep">·</span><span class="type">evidence</span></div>
-            <h3 class="item-title"><a href="https://x.com/tobi/status/2053121182044451016">Shopify River ran with 5,938 employees and 4,450 channels; merge rate climbed 36% to 77% over two months.</a></h3>
-            <p class="item-summary">River authored about 1 in 8 merged PRs in the main monorepo. The improvement is attributed to people watching the agent work and writing down what it should have known, not retraining or model upgrades. Production-scale empirical anchor for the absorption-vs-adoption distinction at firm scale.</p>
+            <div class="item-top"><span class="src">Krishna Rao, Anthropic CFO</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://colossus.com/episode/the-cone-of-uncertainty/">Anthropic enterprise spend up 5× over twelve months; ~90% of finance reporting is now AI-driven internally.</a></h3>
+            <p class="item-summary">Rao gives the first sustained financial-leadership account of the absorption gap from the vendor side: revenue scaled from ~$250M to ~$30B over two years on customer spend that has multiplied five-fold in twelve months. Inside Anthropic itself ~90% of finance reporting and ~90% of code are now AI-driven, with Cowork now outpacing Claude Code's $0-$1B-in-six-months run rate. Vendor self-reported and from an AI-native firm, but the supply-side velocity and the internal-absorption numbers are first of their kind in the wiki.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
-              <span class="traj" aria-label="rising">↑ rising</span>
-              <span class="date">09 may 2026</span>
-            </div>
-          </li>
-
-          <li>
-            <div class="item-top"><span class="src">Aaron Levie, Box</span><span class="sep">·</span><span class="type">evidence</span></div>
-            <h3 class="item-title"><a href="https://x.com/levie/status/2037928306977509601">Cloud took 15 years to diffuse 1,000×. The same shape calibrates the AI absorption timeline.</a></h3>
-            <p class="item-summary">~$500M AWS revenue in 2010, ~$225B combined cloud revenue in 2025. Levie's calibration supplies the first concrete time-horizon anchor for the 18-month plateau prediction. Names the binding constraint as context, permissions, access control, and 18-month-obsolete enterprise architectures, not model capability.</p>
-            <div class="item-meta">
-              <span class="tag"><span class="g">+</span>strengthening</span>
-              <span class="traj" aria-label="holding">↔ holding</span>
-              <span class="date">28 mar 2026</span>
-            </div>
-          </li>
-
-          <li>
-            <div class="item-top"><span class="src">Evan Armstrong, The Leverage</span><span class="sep">·</span><span class="type">evidence</span></div>
-            <h3 class="item-title"><a href="https://www.gettheleverage.com/p/correction-these-layoffs-are-bumming">Markets punish AI-attributed layoffs because post-cut revenue per employee stays a fraction of AI-native peers.</a></h3>
-            <p class="item-summary">Cloudflare (−24% on record revenue), PayPal, Coinbase, Freshworks, Upwork. Post-cut RPE remains 3-5× behind AI-native peers (Cursor: ~$5M/employee). Direct empirical evidence that tooling-and-talent does not produce AI-native economics without structural redesign. Numbers warrant independent verification before any further citation.</p>
-            <div class="item-meta">
-              <span class="tag"><span class="g">+</span>strengthening</span>
-              <span class="traj" aria-label="rising">↑ rising</span>
-              <span class="date">10 may 2026</span>
+              <span class="traj" aria-label="too new to chart">— too new to chart</span>
+              <span class="date">13 may 2026</span>
             </div>
           </li>
 
@@ -445,6 +428,27 @@
               <span class="tag"><span class="g">+</span>strengthening</span>
               <span class="traj" aria-label="too new to chart">— too new to chart</span>
               <span class="date">12 may 2026</span>
+            </div>
+          </li>
+
+          <li>
+            <div class="item-top"><span class="src">Tobi Lutke, Shopify</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://x.com/tobi/status/2053121182044451016">Shopify River ran with 5,938 employees and 4,450 channels; merge rate climbed 36% to 77% over two months.</a></h3>
+            <p class="item-summary">River authored about 1 in 8 merged PRs in the main monorepo. The improvement came from people writing down what the agent should have known, not from model upgrades. Production-scale empirical anchor for the absorption-vs-adoption distinction at firm scale.</p>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
+              <span class="traj" aria-label="rising">↑ rising</span>
+              <span class="date">09 may 2026</span>
+            </div>
+          </li>
+
+          <li class="tier-2">
+            <div class="item-top"><span class="src">Aaron Levie, Box</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://x.com/levie/status/2037928306977509601">Cloud took 15 years to diffuse 1,000×. The same shape calibrates the AI absorption timeline.</a></h3>
+            <p class="item-summary">Levie names the binding constraint as context, permissions, access control, and 18-month-obsolete enterprise architectures, not model capability.</p>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
+              <span class="date">28 mar 2026</span>
             </div>
           </li>
 
@@ -491,7 +495,7 @@
 
 <footer class="site">
   <span>building in public</span>
-  <span>last render · 2026-05-12</span>
+  <span>last render · 2026-05-18</span>
 </footer>
 
 </body>
