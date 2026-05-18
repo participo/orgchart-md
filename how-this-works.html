@@ -407,8 +407,8 @@
     <div class="eyebrow">how this works · pipeline</div>
     <h1 class="claim">A kanban for the agent, checked out by people</h1>
     <div class="lede">
-      <p>This site is a working record of the framework being tested. The framework makes specific claims; research agents create a daily pipeline tracking evidence either supporting the framework or pushing against it. Each item lives on the relevant page with status and trajectory labels that update as the picture changes.</p>
-      <p>The pipeline uses practices the framework describes; delegation of tasks onto a kanban, with agents owning the triage and staging; a human applying discernment, and root-cause learning loops improving the research pipeline over time.</p>
+      <p>This site is a working record of the framework being tested. The framework makes specific claims; research agents run a daily discovery pass and a weekly curation pass to track evidence either supporting the framework or pushing against it. Each item lives on the relevant page with status and trajectory labels that update as the picture changes.</p>
+      <p>The pipeline uses practices the framework describes: delegation of tasks onto a kanban, with agents owning discovery and curation; a human applying discernment on what to publish; and root-cause learning loops improving the research pipeline over time.</p>
     </div>
   </div>
 
@@ -423,49 +423,50 @@
     <article class="col input">
       <div class="col-num">01</div>
       <h2>Sources</h2>
-      <p class="desc" style="margin-top:2px;">Where new material comes from. Pre-curated channels sit alongside raw discovery feeds.</p>
+      <p class="desc" style="margin-top:2px;">Where new material comes from. Pre-curated channels sit alongside scheduled searches, and raw discovery feeds.</p>
       <div class="cards">
-        <div class="card"><span class="label">Curated articles</span><span class="meta">daily review</span></div>
-        <div class="card"><span class="label">Weekly research synthesis</span><span class="meta">saturdays</span></div>
+        <div class="card"><span class="label">curated articles, papers, interviews</span><span class="meta">primary signal, pre-triaged</span></div>
+        <div class="card"><span class="label">Weekly research briefing</span><span class="meta">llm wiki powered digests</span></div>
+        <div class="card"><span class="label">Frontier Lab feeds</span><span class="meta">research, studies, interviews, analysis</span></div>
+        <div class="card"><span class="label">Academic paper scan</span></div>
         <div class="card"><span class="label">Techmeme RSS</span></div>
-        <div class="card"><span class="label">Anthropic / OpenAI / DeepMind research reports</span></div>
-        <div class="card"><span class="label">arXiv cs.MA</span></div>
         <div class="card"><span class="label">Priority newsletters</span></div>
       </div>
     </article>
 
     <article class="col agent">
       <div class="col-num">02</div>
-      <h2>Daily triage</h2>
-      <div class="who"><span class="when">07:43</span></div>
-      <p class="desc">A scheduled agent reads the sources, filters for orgchart.md relevance, tags each kept item against the rubric.</p>
+      <h2>Daily discovery</h2>
+      <div class="who"><span class="when">07:35 daily</span></div>
+      <p class="desc">Agents read the sources, use SKILL files to filter and tag for orgchart.md relevance.</p>
       <div class="cards">
+        <div class="card"><span class="label">Framework</span><span class="meta">1, 2, 3, or cross-framework</span></div>
         <div class="card"><span class="label">Type</span><span class="meta">illustration or evidence</span></div>
         <div class="card"><span class="label">Power</span><span class="meta">+ strengthening &nbsp; − weakening &nbsp; · new &nbsp; = holding</span></div>
-        <div class="card"><span class="label">Confirmation check</span><span class="meta">would it rate equally if reversed?</span></div>
+        <div class="card"><span class="label">feed/YYYY-MM-DD.md</span><span class="meta">staging file</span></div>
       </div>
     </article>
 
     <article class="col agent">
       <div class="col-num">03</div>
-      <h2>Staging</h2>
-      <div class="who"><span class="when">07:58</span></div>
-      <p class="desc">Each day's triage lands as a date-stamped markdown file. Weakening items sit inline with strengthening ones; tensions worth review are surfaced explicitly.</p>
+      <h2>Weekly curation</h2>
+      <div class="who"><span class="when">sundays 06:00</span></div>
+      <p class="desc">Agents evaluate the daily discoveries. Applies source-quality hierarchy, the exclusions, and the per-layer caps, making editorial recommendations, and updating claims and trajectories.</p>
       <div class="cards">
-        <div class="card"><span class="label">feed/2026-05-12.md</span><span class="meta">today's file</span></div>
-        <div class="card"><span class="label">.seen-urls.txt</span><span class="meta">7-day rolling dedupe</span></div>
-        <div class="card"><span class="label">Open questions</span><span class="meta">surfaced for review</span></div>
+        <div class="card"><span class="label">Source-quality tiers</span><span class="meta">primary &rsaquo; practitioner &rsaquo; academic &rsaquo; institutional</span></div>
+        <div class="card"><span class="label">Four exclusions</span><span class="meta">polemic, single-incident, tier-4 flag, empty stays empty</span></div>
+        <div class="card"><span class="label">feed/weekly-YYYY-MM-DD.md</span><span class="meta">curated promotion list</span></div>
       </div>
     </article>
 
     <article class="col human">
       <div class="col-num">04</div>
       <h2>Review</h2>
-      <div class="who"><span class="when">morning</span></div>
-      <p class="desc">Read the daily file. Promote, drop, or set aside as patterns to track. Counter-evidence carries equal weight to confirmation.</p>
+      <div class="who"><span class="when">sunday morning</span></div>
+      <p class="desc">Read the weekly curation. Promote, drop, or set aside. Counter-evidence carries equal weight to confirmation.</p>
       <div class="cards">
-        <div class="card"><span class="label">Promote to a layer page</span></div>
-        <div class="card"><span class="label">Set aside</span><span class="meta">as <em>new</em>, revisit next quarter</span></div>
+        <div class="card"><span class="label">Promote to a page</span></div>
+        <div class="card"><span class="label">Set aside</span><span class="meta">as <em>new</em>, keep an eye on</span></div>
         <div class="card"><span class="label">Drop with rationale</span></div>
       </div>
     </article>
@@ -474,11 +475,11 @@
       <div class="col-num">05</div>
       <h2>Published</h2>
       <div class="who"><span class="when">commit</span></div>
-      <p class="desc">Promoted items appear on the relevant page with tags visible. Trajectory updates at quarterly review.</p>
+      <p class="desc">Promoted items appear on the relevant page in three display tiers. Trajectory updates at quarterly review.</p>
       <div class="cards">
-        <div class="card"><span class="label">diagnosis.md</span><span class="meta">vertical / horizontal</span></div>
-        <div class="card"><span class="label">skills.md</span><span class="meta">3D skills</span></div>
-        <div class="card"><span class="label">infrastructure.md</span><span class="meta">management as infrastructure</span></div>
+        <div class="card"><span class="label">diagnosis.html</span><span class="meta">vertical / horizontal</span></div>
+        <div class="card"><span class="label">skills.html</span><span class="meta">3D skills</span></div>
+        <div class="card"><span class="label">infrastructure.html</span><span class="meta">management as infrastructure</span></div>
         <div class="card"><span class="label">Quarterly trajectory</span><span class="meta">↑ ↔ ↓</span></div>
       </div>
     </article>
@@ -490,6 +491,24 @@
     <span class="handoff h4" aria-hidden="true"><svg width="14" height="10" viewBox="0 0 14 10"><path d="M0 5 H10 M7 1 L11 5 L7 9" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
 
   </div>
+
+  <section class="philosophy" aria-labelledby="philosophy-h">
+    <div class="col">
+      <h2 id="philosophy-h">How items are tagged</h2>
+      <p>Every kept item carries three tags applied during the daily discovery pass.</p>
+      <p><em>Type</em> is either illustration or evidence. Illustrations show the pattern in practice. Evidence tests the framework's predictive claim. The strong-form prediction (firms treating AI as a tooling-and-talent exercise plateau within 18 months; firms solving for capital-C Capability compound) is testable only against evidence.</p>
+      <p><em>Power</em> takes one of four values. <strong>Strengthening</strong> corroborates a layer's claim with a new mechanism or fresh empirical data; the confirmation check is the discipline (would the item rate equally if it argued the opposite?). <strong>Weakening</strong> contradicts or scope-limits a claim, and sits inline with strengthening items on each layer page rather than in a footer. The site is structurally a falsification record. <strong>New</strong> is a first encounter with a pattern, or a live signal worth tracking. <strong>Holding</strong> confirms what the framework already says without adding mechanism, sharpening, or empirical anchor, and is used sparingly.</p>
+      <p><em>Trajectory</em> (↑ rising, ↔ holding, ↓ falling) updates over time as the evidence base grows. Reassessed quarterly.</p>
+    </div>
+    <div class="col">
+      <h2>How items get promoted</h2>
+      <p>The daily pass casts a wide net. The weekly pass applies the bar.</p>
+      <p><em>Source quality</em> runs in four tiers. Primary sources (studies, interviews, cases) from frontier firms carry the most weight. Established practitioner voices (articles, interviews) on platforms with editorial quality come next. Sharp academic papers with a specific empirical finding or formal result follow. Institutional research is useful when the analysis adds depth beyond the bare data point.</p>
+      <p><em>Four exclusions</em> discipline the picks. <strong>Polemic</strong>: practitioner reputation doesn't clear the bar; mechanism or empirical anchor does. <strong>Single-incident</strong>: an isolated event is anecdote until causal evidence links it to a named claim and multiple corroborating instances exist. <strong>Tier-4 falsification is a flag, not a promotion</strong>: when a news data point pressures an existing on-site claim, the move is to mark the existing item <em>contested</em> and note the new data inline. <strong>Empty slots stay empty</strong>: a layer with no refutation-shaped weakening evidence shows the gap; sharpening dressed as a refutation makes it less visible without resolving it.</p>
+      <p><em>Caps</em>: maximum six promotions per week across all layers, maximum two per layer, default zero. A high-bar empty week is a healthy week.</p>
+      <p><em>On the layer pages</em>, items appear in three display tiers. The three newest get full descriptions. The next two get a single sentence. The rest are title-only hyperlinks. Older items carry less surface area but remain visible.</p>
+    </div>
+  </section>
 
   <nav class="layer-nav" aria-label="Layer navigation">
     <div class="prev">
@@ -506,7 +525,7 @@
 
 <footer class="site">
   <span>building in public</span>
-  <span>v1 pipeline · live since may 2026</span>
+  <span>v2 pipeline (daily discovery + weekly curation) · live since may 2026</span>
 </footer>
 
 </body>
