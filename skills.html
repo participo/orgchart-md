@@ -14,7 +14,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
-<script src="hero-visual.js" defer></script>
 <style>
   :root {
     --paper:   #faf9f6;
@@ -47,9 +46,6 @@
   nav.primary a:hover, nav.primary a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 4px; }
   nav.primary .meta-link { margin-left: auto; color: var(--muted); }
   main.page { max-width: 1080px; margin: 0 auto; padding: 56px 28px 96px; }
-  figure.hero-vis { margin: 8px 0 32px; padding: 0; }
-  figure.hero-vis .hero-vis-slot { display: block; width: 100%; aspect-ratio: 5 / 2; }
-  figure.hero-vis svg, figure.hero-vis canvas { display: block; width: 100%; height: 100%; }
   .layer-head { margin-bottom: 56px; }
   .eyebrow { font-family: var(--mono); font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 18px; }
   h1.claim { font-family: "Caveat", cursive; font-weight: 600; font-style: normal; font-size: clamp(38px, 5vw, 60px); line-height: 1.05; letter-spacing: 0; margin: 0 0 24px; color: var(--mark); text-wrap: balance; }
@@ -149,7 +145,6 @@
   <div class="layer-head">
     <div class="eyebrow">layer 02 · what people need</div>
     <h1 class="claim">New skills. A new challenge</h1>
-    <figure class="hero-vis" aria-hidden="true"><div class="hero-vis-slot" data-hero="skills"></div></figure>
     <div class="prose">
       <p>Three skills have emerged to make this work: <em>delegation</em>, <em>discernment</em>, <em>debugging</em>.</p>
       <p><em>Delegation</em>: knowing what to hand off, and how. Verifiable, well-scoped work; keep enough context to evaluate the result. The more you delegate, the less you learn what you're handing off; understanding that asymmetry is what makes delegation work.</p>
@@ -166,8 +161,8 @@
     <div class="section-h">
       <span class="h-title" id="evidence-h">Evidence &amp; illustration</span>
       <span class="count">
-        3 items
-        <span class="g">+</span>3
+        4 items
+        <span class="g">+</span>4
       </span>
     </div>
 
@@ -176,9 +171,20 @@
       <div class="col">
         <div class="col-h">
           <span class="name"><span class="g">+</span>supports the claim</span>
-          <span class="n">3 items</span>
+          <span class="n">4 items</span>
         </div>
         <ul class="items">
+
+          <li>
+            <div class="item-top"><span class="src">Shen &amp; Tamkin, Anthropic</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://www.anthropic.com/research/AI-assistance-coding-skills" target="_blank" rel="noopener noreferrer">RCT of 52 engineers learning Trio: 17-point comprehension gap, concentrated on debugging questions.</a></h3>
+            <p class="item-summary">Randomised controlled trial of 52 mostly-junior software engineers learning the Python Trio library with or without an AI assistant. Comprehension quiz scored 50% in the AI condition against 67% in the no-AI condition (Cohen's <em>d</em> = 0.738, <em>p</em> = 0.01), with the largest single-question gap on debugging, the dimension framework.md predicts erodes most under heavy delegation. Three low-scoring interaction patterns (AI delegation, progressive AI reliance, iterative AI debugging) sit under 40% comprehension; three high-scoring patterns (generation-then-comprehension, hybrid code-explanation, conceptual inquiry) clear 65%. Posture predicts the erosion direction, and speed gain was not statistically significant.</p>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
+              <span class="traj" aria-label="too new to chart">— too new to chart</span>
+              <span class="date">may 2026</span>
+            </div>
+          </li>
 
           <li>
             <div class="item-top"><span class="src">Tobi Lutke, Shopify</span><span class="sep">·</span><span class="type">illustration</span></div>
@@ -202,13 +208,12 @@
             </div>
           </li>
 
-          <li>
+          <li class="tier-2">
             <div class="item-top"><span class="src">Bret Taylor, Sierra</span><span class="sep">·</span><span class="type">illustration</span></div>
             <h3 class="item-title"><a href="https://cheekypint.substack.com/p/bret-taylor-of-sierra-on-ai-agents" target="_blank" rel="noopener noreferrer">"I was proud of the elegance of the code I wrote. I haven't quite visualised what replaces that."</a></h3>
-            <p class="item-summary">Senior engineering executive on the loss of code-craft as identity-level, not technical. The elegance was inseparable from the deep contextual knowledge that allowed him to evaluate correctness. His proposed replacement craft is documentation, writing the architectural decision rationale rather than the code; more durable than the code itself, and exactly the harness material agents need.</p>
+            <p class="item-summary">Senior engineering executive on the loss of code-craft as identity-level; proposed replacement is documentation of architectural decision rationale, exactly the harness material agents need.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
-              <span class="traj" aria-label="holding">↔ holding</span>
               <span class="date">early 2026</span>
             </div>
           </li>
@@ -244,7 +249,7 @@
 
 <footer class="site">
   <span>building in public</span>
-  <span>last render · 2026-05-18</span>
+  <span>last render · 2026-05-25</span>
 </footer>
 
 </body>

@@ -14,7 +14,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
-<script src="hero-visual.js" defer></script>
 <style>
   :root {
     --paper:   #faf9f6;
@@ -47,9 +46,6 @@
   nav.primary a:hover, nav.primary a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 4px; }
   nav.primary .meta-link { margin-left: auto; color: var(--muted); }
   main.page { max-width: 1080px; margin: 0 auto; padding: 56px 28px 96px; }
-  figure.hero-vis { margin: 8px 0 32px; padding: 0; }
-  figure.hero-vis .hero-vis-slot { display: block; width: 100%; aspect-ratio: 5 / 2; }
-  figure.hero-vis svg, figure.hero-vis canvas { display: block; width: 100%; height: 100%; }
   .layer-head { margin-bottom: 56px; }
   .eyebrow { font-family: var(--mono); font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 18px; }
   h1.claim { font-family: "Caveat", cursive; font-weight: 600; font-style: normal; font-size: clamp(38px, 5vw, 60px); line-height: 1.05; letter-spacing: 0; margin: 0 0 24px; color: var(--mark); text-wrap: balance; }
@@ -148,7 +144,6 @@
   <div class="layer-head">
     <div class="eyebrow">layer 03 · management as infrastructure</div>
     <h1 class="claim">The forgotten operating system</h1>
-    <figure class="hero-vis" aria-hidden="true"><div class="hero-vis-slot" data-hero="infrastructure"></div></figure>
     <div class="prose">
       <p>What's unlocking the latest agent capabilities? Kanban boards. Explicit handoff protocols. Delegation with scope and boundaries. Root-cause analysis. Memory and learning loops. Specs and skill files as durable operating protocols.</p>
       <p>None of this is new. Frontier firms are rediscovering and applying late-20th-century management practices that many organisations let atrophy.</p>
@@ -161,8 +156,8 @@
     <div class="section-h">
       <span class="h-title" id="evidence-h">Evidence &amp; illustration</span>
       <span class="count">
-        9 items
-        <span class="g">+</span>6
+        10 items
+        <span class="g">+</span>7
         <span class="g weak">−</span>3
       </span>
     </div>
@@ -172,9 +167,20 @@
       <div class="col">
         <div class="col-h">
           <span class="name"><span class="g">+</span>supports the claim</span>
-          <span class="n">6 items</span>
+          <span class="n">7 items</span>
         </div>
         <ul class="items">
+
+          <li>
+            <div class="item-top"><span class="src">Brandon Gell &amp; Willie Williams, Every</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://every.to/source-code/we-gave-every-employee-an-ai-agent-here-s-what-we-re-doing-differently-now" target="_blank" rel="noopener noreferrer">Every rolled out a personal agent per employee, abandoned it within weeks, rebuilt around shared coworkers with explicit roles, group access, and group memory.</a></h3>
+            <p class="item-summary">Plus One launched after a Panama retreat as a personal-agent-per-employee deployment on Every's OpenClaw harness. The architecture was abandoned within weeks because the agents were unreliable, broke constantly, and required more upkeep than the productivity they returned. Plus One 2.0 is being rebuilt around shared, reliable coworkers with explicit roles, scoped group access, and memory accumulated from group interactions. Real-time empirical case of the management-as-infrastructure prescription being learned through failure: the team discovered they needed explicit handoff protocols, scoped delegation, and durable shared memory, exactly the operational substrate the layer prescribes.</p>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
+              <span class="traj" aria-label="too new to chart">— too new to chart</span>
+              <span class="date">17 may 2026</span>
+            </div>
+          </li>
 
           <li>
             <div class="item-top"><span class="src">John Cutler, The Beautiful Mess</span><span class="sep">·</span><span class="type">evidence</span></div>
@@ -198,13 +204,12 @@
             </div>
           </li>
 
-          <li>
+          <li class="tier-2">
             <div class="item-top"><span class="src">Helm, Priebe, Duderstadt, arXiv cs.MA</span><span class="sep">·</span><span class="type">evidence</span></div>
             <h3 class="item-title"><a href="https://arxiv.org/abs/2605.11135" target="_blank" rel="noopener noreferrer">Adaptive control charts extend lean/SPC to multi-agent LLMs, exposing a fundamental learn-versus-monitor tradeoff.</a></h3>
-            <p class="item-summary">Adaptive control charts proven necessary for monitoring agents that learn, and proven susceptible to adversaries that defect slowly. The paper's closing finding: <em>either agents in a system cannot learn, or the system is susceptible to adversaries</em>. Direct research-side underwriting of the claim that classical operational primitives transfer with adaptation; also a sharper articulation of the irreducible-error-rate edge the framework already names.</p>
+            <p class="item-summary">Adaptive control charts proven necessary for monitoring agents that learn, and proven susceptible to adversaries that defect slowly. Closing finding: <em>either agents can learn, or the system stays robust against adversaries</em>.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
-              <span class="traj" aria-label="too new to chart">— too new to chart</span>
               <span class="date">13 may 2026</span>
             </div>
           </li>
@@ -219,10 +224,9 @@
             </div>
           </li>
 
-          <li class="tier-2">
+          <li class="tier-3">
             <div class="item-top"><span class="src">Mario Hayashi</span><span class="sep">·</span><span class="type">illustration</span></div>
             <h3 class="item-title"><a href="https://blog.mariohayashi.com/p/the-factory-must-grow-part-iii-stopping" target="_blank" rel="noopener noreferrer">Developer applies Jidoka, Poka yoke, Andon, Muda, and Five Whys by name to AI agent failures.</a></h3>
-            <p class="item-summary">After silent-drop failures in his agent orchestration system, applies Toyota Production System principles directly. Cleanest single public artefact of the rediscovery thesis in practice.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
               <span class="date">04 may 2026</span>
@@ -299,7 +303,7 @@
 
 <footer class="site">
   <span>building in public</span>
-  <span>last render · 2026-05-18</span>
+  <span>last render · 2026-05-25</span>
 </footer>
 
 </body>

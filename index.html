@@ -14,7 +14,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
-<script src="hero-visual.js" defer></script>
 <style>
   :root {
     --paper:   #faf9f6;
@@ -25,7 +24,6 @@
     --rule:    #d6d2c8;
     --rule-soft: #e8e5dc;
     --mark:    oklch(0.55 0.12 30);
-    --supp:    oklch(0.48 0.08 150);
     --new:     oklch(0.50 0.08 240);
     --hold:    oklch(0.50 0.02 250);
     --serif:   "Source Serif 4", ui-serif, Charter, "Iowan Old Style", "Source Serif Pro", Cambria, Georgia, serif;
@@ -62,22 +60,6 @@
   nav.primary .meta-link { margin-left: auto; color: var(--muted); }
 
   main.page { max-width: 920px; margin: 0 auto; padding: 64px 28px 96px; }
-
-  figure.hero-vis {
-    margin: 8px 0 32px;
-    padding: 0;
-  }
-  figure.hero-vis .hero-vis-slot {
-    display: block;
-    width: 100%;
-    aspect-ratio: 5 / 2;
-  }
-  figure.hero-vis svg,
-  figure.hero-vis canvas {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
 
   .masthead { margin-bottom: 56px; }
   .vol {
@@ -196,7 +178,7 @@
       --paper: #1a1a1a; --paper-2: #232323;
       --ink: #f0ede5; --ink-2: #c8c5bc; --muted: #8a8780;
       --rule: #2e2e2e; --rule-soft: #262626;
-      --mark: oklch(0.72 0.12 30); --supp: oklch(0.72 0.10 150); --new: oklch(0.72 0.08 240); --hold: oklch(0.62 0.02 250);
+      --mark: oklch(0.72 0.12 30); --new: oklch(0.72 0.08 240); --hold: oklch(0.62 0.02 250);
     }
   }
 </style>
@@ -218,7 +200,6 @@
   <div class="masthead">
     <div class="vol">vol. 01 · 2026</div>
     <h1 class="kicker">The new org chart for agents?</h1>
-    <figure class="hero-vis" aria-hidden="true"><div class="hero-vis-slot" data-hero="index"></div></figure>
   </div>
 
   <section class="thesis">
@@ -243,13 +224,13 @@
         <div class="num">02</div>
         <a class="title" href="skills.html">What people need</a>
         <p class="blurb">New skills are driving agent outcomes, but create a new problem.</p>
-        <div class="stat">2 items · <span class="g">+</span>2</div>
+        <div class="stat">4 items · <span class="g">+</span>4</div>
       </li>
       <li>
         <div class="num">03</div>
         <a class="title" href="infrastructure.html">Management as infrastructure</a>
         <p class="blurb">The forgotten management practices helping agents thrive.</p>
-        <div class="stat">9 items · <span class="g">+</span>6 <span class="g weak">−</span>3</div>
+        <div class="stat">10 items · <span class="g">+</span>7 <span class="g weak">−</span>3</div>
       </li>
       <li>
         <div class="num">04</div>
@@ -263,10 +244,10 @@
   <section class="delta" aria-labelledby="delta-h">
     <div class="section-h">
       <span id="delta-h">This week's analysis</span>
-      <span>updated 18 may 2026</span>
+      <span>updated 25 may 2026</span>
     </div>
     <div class="summary">
-      <span class="item"><span class="g">+</span>3 strengthening</span>
+      <span class="item"><span class="g">+</span>2 strengthening</span>
       <span class="item"><span class="g weak">−</span>0 weakening</span>
       <span class="item"><span class="g new">·</span>0 new</span>
       <span class="item"><span class="g hold">=</span>0 holding</span>
@@ -275,24 +256,16 @@
       <li>
         <span class="glyph" title="strengthening">+</span>
         <div class="body">
-          <div class="t">Anthropic enterprise spend up 5× over twelve months; revenue scaled ~$250M to ~$30B over two years. Internally, ~90% of finance reporting and ~90% of code are now AI-driven.</div>
-          <div class="meta"><span class="layer">diagnosis</span> · evidence · krishna rao, anthropic cfo, 13 may 2026</div>
+          <div class="t">Every rolled out a personal agent per employee, abandoned it within weeks, rebuilt around shared coworkers with explicit roles, group access, and group memory.</div>
+          <div class="meta"><span class="layer">infrastructure</span> · evidence · brandon gell &amp; willie williams, every, 17 may 2026</div>
         </div>
         <span class="traj" aria-label="too new to chart">—</span>
       </li>
       <li>
         <span class="glyph" title="strengthening">+</span>
         <div class="body">
-          <div class="t">"Anthropic is shipping our harness strategy, not a product." Krieger names the current Claude AI / Cowork / Claude Code split as a broken abstraction; agent plus canvas as the unit of work.</div>
-          <div class="meta"><span class="layer">infrastructure</span> · evidence · mike krieger, anthropic cpo, 15 may 2026</div>
-        </div>
-        <span class="traj" aria-label="too new to chart">—</span>
-      </li>
-      <li>
-        <span class="glyph" title="strengthening">+</span>
-        <div class="body">
-          <div class="t">Cutler's three-motion management triad: exception, presence, delegation. Each fails when run without the other two; Mulally at Ford, Chesky at Airbnb, and Huang at Nvidia as worked examples.</div>
-          <div class="meta"><span class="layer">infrastructure</span> · evidence · john cutler, tbm 422, 16 may 2026</div>
+          <div class="t">RCT of 52 engineers learning Trio: 17-point comprehension gap, concentrated on debugging questions. Posture predicts the erosion direction.</div>
+          <div class="meta"><span class="layer">skills</span> · evidence · shen &amp; tamkin, anthropic, may 2026</div>
         </div>
         <span class="traj" aria-label="too new to chart">—</span>
       </li>
@@ -303,7 +276,7 @@
 
 <footer class="site">
   <span>building in public</span>
-  <span>last render · 2026-05-18</span>
+  <span>last render · 2026-05-25</span>
 </footer>
 
 </body>
