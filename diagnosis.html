@@ -14,7 +14,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
-<script src="hero-visual.js" defer></script>
 <style>
   :root {
     --paper:   #faf9f6;
@@ -84,22 +83,6 @@
     max-width: 1080px;
     margin: 0 auto;
     padding: 56px 28px 96px;
-  }
-
-  figure.hero-vis {
-    margin: 8px 0 32px;
-    padding: 0;
-  }
-  figure.hero-vis .hero-vis-slot {
-    display: block;
-    width: 100%;
-    aspect-ratio: 5 / 2;
-  }
-  figure.hero-vis svg,
-  figure.hero-vis canvas {
-    display: block;
-    width: 100%;
-    height: 100%;
   }
 
   .layer-head { margin-bottom: 56px; }
@@ -397,7 +380,6 @@
   <div class="layer-head">
     <div class="eyebrow">layer 01 · the diagnosis</div>
     <h1 class="claim">Agents are vertical. Organisations are horizontal</h1>
-    <figure class="hero-vis" aria-hidden="true"><div class="hero-vis-slot" data-hero="diagnosis"></div></figure>
     <div class="prose">
       <p>Human work flows sideways: across people, review loops, teams, and steercos. Each handoff in those horizontal workflows was designed for human speed and manual oversight. What used to require multiple steps, and handoffs to other apps, colleagues or teams, agents have collapsed into integrated, vertical tasks.</p>
       <p>The mismatch creates an AI absorption and coordination "tax" now that agents transform AI into a <em>capability</em> that's producing more coherently, and faster than organisations can process, and integrate. People in existing horizontal workflows carry a new burden: reviewing, validating, and integrating agent output.</p>

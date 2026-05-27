@@ -21,19 +21,19 @@
 
   // Triangle anchors in the buffer
   var TRI = {
-    apex:   { x: 300, y:  85 },
-    corner: { x: 300, y: 425 },
-    end:    { x: 1080, y: 425 }
+    apex:   { x:  80, y:  80 },
+    corner: { x:  80, y: 440 },
+    end:    { x: 1235, y: 440 }
   };
 
   // Horizontal clusters — varying widths, with visible gaps between them.
   // The breaks ARE the visual story for the horizontal.
   var H_CLUSTERS = [
-    { cx: 378,  rx: 34, ry: 16, n: 38 },
-    { cx: 522,  rx: 26, ry: 13, n: 22 },
-    { cx: 678,  rx: 20, ry: 10, n: 14 }, // sparser — a weaker handoff
-    { cx: 828,  rx: 30, ry: 14, n: 28 },
-    { cx: 980,  rx: 30, ry: 13, n: 24 }
+    { cx: 220,  rx: 36, ry: 16, n: 38 },
+    { cx: 432,  rx: 28, ry: 13, n: 22 },
+    { cx: 658,  rx: 22, ry: 10, n: 14 }, // sparser — a weaker handoff
+    { cx: 876,  rx: 32, ry: 14, n: 28 },
+    { cx: 1095, rx: 32, ry: 13, n: 24 }
   ];
 
   // Diagonal clusters — three dense circular knots along the hypotenuse
@@ -42,9 +42,7 @@
   // Per-page emphasis: opacity for each element + accent type
   var PAGES = {
     index: {
-      vAlpha: 1.0, hAlpha: 1.0, dAlpha: 1.0,
-      vGuide: 1.0, hGuide: 1.0, dGuide: 0.9,
-      accents: 'd_focal',
+      kind: 'gridCloud',
       label: 'index'
     },
     diagnosis: {
@@ -99,7 +97,40 @@
     return 'rgba(' + rgb[0] + ', ' + rgb[1] + ', ' + rgb[2] + ', ' + a + ')';
   }
 
-  // ── drawing primitives ────────────────────────────────────────────────
+  // Grid → Cloud: left side aligned grid, right side progressively dispersed.
+  // The original abstract composition used on the index hero.
+  function drawGridToCloud(ctx, p, ink) {
+    var mx = 70, my = 70;
+    var cellW = 22, cellH = 22;
+    var cols = Math.floor((BUF_W - mx * 2) / cellW);
+    var rows = Math.floor((BUF_H - my * 2) / cellH);
+    var i = 0;
+    for (var r = 0; r < rows; r++) {
+      for (var c = 0; c < cols; c++) {
+        i++;
+        var u = c / (cols - 1);
+        // Dropout grows toward the right — cloudier as it disperses
+        if (hash01(i * 13.7) < u * 0.55) continue;
+        // Order: left-to-right reveal
+        var start = u * 0.7;
+        var a = easeOut(lp(p, start, start + 0.25));
+        if (a < 0.02) continue;
+        // Displacement scales with u; left = aligned, right = scattered
+        var disp = u * 26;
+        var dx = (hash01(i * 7.3) - 0.5) * disp;
+        var dy = (hash01(i * 11.9) - 0.5) * disp;
+        var x = mx + c * cellW + cellW / 2 + dx;
+        var y = my + r * cellH + cellH / 2 + dy;
+        var radius = 1.6 + u * 1.1;
+        ctx.fillStyle = rgba(ink, a * (0.65 + 0.3 * (1 - u)));
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+  }
+
+  // ── drawing primitives ────────────────────────────────────────────
 
   function drawGuides(ctx, e, ink) {
     // V: solid thin line — V is continuous, integrated
@@ -326,74 +357,68 @@
     var hMidX = (TRI.corner.x + TRI.end.x) / 2;
 
     if (kind === 'index') {
-      // V label — horizontal, multi-line, right-aligned to the left of V
+      // V label — above the apex, single line, left-aligned with the vertical
       ctx.fillStyle = rgba(ink, a * 0.7);
-      setFont(28, '500');
-      ctx.textAlign = 'right';
-      ctx.textBaseline = 'middle';
-      multiline(['integrated', 'agent capability'], TRI.apex.x - 24, vMidY, 32);
+      setFont(32, '500');
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'alphabetic';
+      ctx.fillText('integrated agent capability', TRI.apex.x - 6, TRI.apex.y - 18);
 
       // H label — below the horizontal
       ctx.fillStyle = rgba(ink, a * 0.7);
-      setFont(28, '500');
+      setFont(32, '500');
       ctx.textAlign = 'center';
       ctx.textBaseline = 'top';
-      ctx.fillText('horizontal organisation', hMidX, TRI.corner.y + 32);
+      ctx.fillText('horizontal organisation', hMidX, TRI.corner.y + 34);
 
       // D label — terracotta, mid-diagonal, perpendicular off
       var midX = (TRI.apex.x + TRI.end.x) / 2;
       var midY = (TRI.apex.y + TRI.end.y) / 2;
       var off = 80;
       ctx.fillStyle = rgba(mark, a * 0.95);
-      setFont(36, '600');
+      setFont(42, '600');
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText('3D skills', midX + nx * off, midY + ny * off);
 
     } else if (kind === 'diagnosis') {
-      // V label — horizontal, multi-line
+      // V label — above the apex, single line
       ctx.fillStyle = rgba(ink, a * 0.7);
-      setFont(22, '500');
-      ctx.textAlign = 'right';
-      ctx.textBaseline = 'middle';
-      multiline([
-        'agent capabilities',
-        'increasingly integrated',
-        'tasks and learning loops'
-      ], TRI.apex.x - 24, vMidY, 26);
+      setFont(26, '500');
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'alphabetic';
+      ctx.fillText('agent capabilities increasingly integrated tasks and learning loops',
+        TRI.apex.x - 6, TRI.apex.y - 18);
 
       // H label
       ctx.fillStyle = rgba(ink, a * 0.7);
-      setFont(28, '500');
+      setFont(32, '500');
       ctx.textAlign = 'center';
       ctx.textBaseline = 'top';
-      ctx.fillText('organisations remain horizontal', hMidX, TRI.corner.y + 32);
+      ctx.fillText('organisations remain horizontal', hMidX, TRI.corner.y + 34);
 
     } else if (kind === 'skills') {
       // Three cluster labels above the diagonal
       var names = ['delegation', 'discernment', 'debugging'];
-      var lblOff = 62;
+      var lblOff = 64;
       D_CLUSTERS.forEach(function (t, idx) {
         var cx = TRI.apex.x + (TRI.end.x - TRI.apex.x) * t;
         var cy = TRI.apex.y + (TRI.end.y - TRI.apex.y) * t;
         ctx.fillStyle = rgba(mark, a * 0.95);
-        setFont(28, '600');
+        setFont(32, '600');
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(names[idx], cx + nx * lblOff, cy + ny * lblOff);
       });
 
     } else if (kind === 'infrastructure') {
-      // Label closer in — nested in the empty space above the diagonal,
-      // anchored near the end point so it feels part of the composition.
+      // Right-side label sitting in the empty zone above the diagonal,
+      // roughly mid-height of the figure.
       ctx.textAlign = 'right';
-      ctx.textBaseline = 'top';
+      ctx.textBaseline = 'middle';
       ctx.fillStyle = rgba(ink, a * 0.75);
-      setFont(30, '600');
-      ctx.fillText('the operating system', 1080, 160);
-      ctx.fillStyle = rgba(ink, a * 0.55);
-      setFont(22, '400', true);
-      ctx.fillText('kanban, kaizen, memory', 1080, 196);
+      setFont(34, '600');
+      ctx.fillText('kanban, memory.md, poke yoke, kaizen…', 1220, 210);
     }
   }
 
@@ -419,6 +444,10 @@
 
     function paint(p) {
       ctx.clearRect(0, 0, BUF_W, BUF_H);
+      if (emphasis.kind === 'gridCloud') {
+        drawGridToCloud(ctx, p, ink);
+        return;
+      }
       drawGuides(ctx, emphasis, ink);
       drawVertical(ctx, p, emphasis.vAlpha, ink);
       drawHorizontal(ctx, p, emphasis.hAlpha, ink);
