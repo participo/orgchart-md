@@ -14,6 +14,12 @@ But there are organisations integrating agents successfully; by using kanban and
 
 ---
 
+## Filing rule
+
+Every item is filed under exactly one of the three layers. There is no cross-layer surface. An item that touches more than one layer is placed on the layer where its strongest binding claim sits, with any secondary reading noted inline in the card summary rather than given its own home. This keeps the site navigable as three claims and forces each promotion to declare which claim it most tests. Set 2026-06-22.
+
+---
+
 ## Layer 1 — Diagnosis: vertical capability, horizontal organisation
 
 ### The claim (matches live site)

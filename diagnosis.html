@@ -290,6 +290,23 @@
   .item-meta .tag.weak .g { color: var(--mark); }
   .item-meta .tag.new  .g { color: var(--new); }
   .item-meta .tag.hold .g { color: var(--hold); }
+  .item-meta .tag.contested .g { color: var(--mark); }
+  .item-contested {
+    margin: 10px 0 0;
+    padding: 9px 0 0 14px;
+    border-left: 2px solid var(--mark);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink-2);
+  }
+  .item-contested .cn-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--mark);
+    margin-right: 8px;
+  }
   .item-meta .traj {
     color: var(--ink-2);
   }
@@ -411,8 +428,8 @@
     <div class="section-h">
       <span class="h-title" id="evidence-h">Evidence &amp; illustration</span>
       <span class="count">
-        8 items
-        <span class="g">+</span>7
+        9 items
+        <span class="g">+</span>8
         <span class="g weak">−</span>1
       </span>
     </div>
@@ -423,9 +440,20 @@
       <div class="col">
         <div class="col-h">
           <span class="name"><span class="g">+</span>supports the claim</span>
-          <span class="n">7 items</span>
+          <span class="n">8 items</span>
         </div>
         <ul class="items">
+
+          <li>
+            <div class="item-top"><span class="src">Satya Nadella, Microsoft</span><span class="sep">·</span><span class="type">illustration</span></div>
+            <h3 class="item-title"><a href="https://x.com/satyanadella/article/2066182223213293753" target="_blank" rel="noopener noreferrer">Human capital appreciates as token capital grows: a firm's durable IP is a learning loop on top of models, not the models themselves.</a></h3>
+            <p class="item-summary">Nadella separates human capital (knowledge, judgment, relationships, pattern recognition) from token capital (the AI capability a firm builds and owns) and argues the first appreciates as the second grows, direct CEO-level pushback on experience-erosion pessimism. The operational core is a learning loop on top of models (private evals against business outcomes, RL on internal traces, a queryable knowledge base) that becomes the firm's new IP and survives a model swap without losing the "company veteran" expertise. The most senior external voice yet to state the owned-intelligence and memory-loop thesis the diagnosis rests on, though Microsoft has a commercial interest in "the durable layer is the ecosystem, not the model" being true.</p>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
+              <span class="traj" aria-label="too new to chart">— too new to chart</span>
+              <span class="date">16 jun 2026</span>
+            </div>
+          </li>
 
           <li>
             <div class="item-top"><span class="src">Anthropic Institute</span><span class="sep">·</span><span class="type">evidence</span></div>
@@ -519,8 +547,10 @@
             <div class="item-top"><span class="src">Azeem Azhar, Exponential View</span><span class="sep">·</span><span class="type">evidence</span></div>
             <h3 class="item-title"><a href="https://www.exponentialview.co/p/ev-573" target="_blank" rel="noopener noreferrer">Citadel data: jobs in highly AI-exposed occupations are rising, not falling.</a></h3>
             <p class="item-summary">Software engineering postings up 18% YoY; customer service and accountancy also rising. Azhar reads the data through three mechanisms: complementarity, supervision overhead, demand expansion. Meaningful pushback on the simple substitution narrative; needs a Layer 1 reading that allows for compounding gain without proportional headcount compression.</p>
+            <p class="item-contested"><span class="cn-label">Contested · evidence · 19 jun 2026</span>Challenger, Gray &amp; Christmas attribute roughly 40% of US May job cuts to AI, echoed in the 19 June Azhar roundup. The fresh layoff data cuts against the "rising, not falling" reading on the same AI-exposed occupations, so this card is held contested pending occupation-level corroboration.</p>
             <div class="item-meta">
               <span class="tag weak"><span class="g">−</span>weakening</span>
+              <span class="tag contested"><span class="g">!</span>contested</span>
               <span class="traj" aria-label="holding">↔ holding</span>
               <span class="date">10 may 2026</span>
             </div>
