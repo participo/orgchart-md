@@ -177,17 +177,6 @@
         <ul class="items">
 
           <li>
-            <div class="item-top"><span class="src">Gottweis et al., Nature</span><span class="sep">·</span><span class="type">evidence</span></div>
-            <h3 class="item-title"><a href="https://www.nature.com/articles/s41586-026-10644-y" target="_blank" rel="noopener noreferrer">Co-Scientist: a multi-agent system with six specialised roles and persistent memory beats expert best-guess solutions on novelty and impact, validated in three wet labs.</a></h3>
-            <p class="item-summary">Peer-reviewed (Nature) account of a Gemini-based multi-agent system organised into six specialised roles (Generation, Reflection, Ranking, Evolution, Proximity, Meta-review) over an asynchronous task framework with persistent context memory, with tournament evolution and Elo scoring refining hypotheses. Test-time-compute scaling shows monotonic Elo gains across 203 research goals with no saturation; expert preference evaluation places it past the curating experts' best-guess solutions on the hardest goals, with three wet-lab validations (AML drug repurposing, liver-fibrosis targets, AMR mechanism). Filed here as the within-system instance of management as infrastructure: the Reflection-agent ablation shows that giving the critic external search tools prevents plausible-but-false hypotheses (the root-cause-analysis discipline at the agent layer), and the Ranking-agent ablation shows a scientific-debate prompt improves ranking and cuts positional bias (the discernment discipline at the LLM-as-judge layer). The same architectural pattern the layer prescribes, multi-agent plus verifiable signal plus test-time compute without saturation, now carries a primary-source within-system anchor.</p>
-            <div class="item-meta">
-              <span class="tag"><span class="g">+</span>strengthening</span>
-              <span class="traj" aria-label="too new to chart">— too new to chart</span>
-              <span class="date">19 may 2026</span>
-            </div>
-          </li>
-
-          <li>
             <div class="item-top"><span class="src">Google Cloud</span><span class="sep">·</span><span class="type">illustration</span></div>
             <h3 class="item-title"><a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener noreferrer">Google publishes the Open Knowledge Format, a vendor-neutral spec for knowledge as a directory of frontmatter-tagged markdown an agent can query and edit.</a></h3>
             <p class="item-summary">Google has published Open Knowledge Format v0.1, a vendor-neutral specification representing organisational knowledge as a directory of frontmatter-tagged markdown documents that an agent can query and edit, with optional index and log files and a one-page spec in the GoogleCloudPlatform/knowledge-catalog repository. It is the second hyperscaler to formalise markdown directories as the operating substrate for agent-readable knowledge. The move corroborates the site's reading that the medium of agentic coordination is markdown, and that specs and skill files are becoming durable operating protocols across vendors.</p>
@@ -211,7 +200,7 @@
 
           <li>
             <div class="item-top"><span class="src">Kieran Klaassen, Every</span><span class="sep">·</span><span class="type">illustration</span></div>
-            <h3 class="item-title"><a href="https://every.to/guides/compound-engineering-gets-an-upgrade" target="_blank" rel="noopener noreferrer">Compound Engineering Gets an Upgrade.</a></h3>
+            <h3 class="item-title"><a href="https://every.to/guides/compound-engineering-gets-an-upgrade" target="_blank" rel="noopener noreferrer">With a good plan and the right context, the build phase becomes routine and human effort shifts to the two ends of the loop, ideation and polish.</a></h3>
             <p class="item-summary">The original compound-engineering loop (brainstorm → work → review → compound → repeat) extends to eight steps with ideate and brainstorm prepended and polish appended: ideate → brainstorm → plan → work → review → polish → compound → repeat. The extension mechanism is that the work phase becomes boring once the plan is good and the agent has the right context, so human attention that used to sit in the middle now concentrates at the two ends, exactly as the human-sandwich pattern predicts. Klaassen treats the loop as the AI-native engineering generalisation of the prior practice and notes it should apply to knowledge work more broadly.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
@@ -220,64 +209,65 @@
             </div>
           </li>
 
-          <li>
+          <li class="tier-2">
             <div class="item-top"><span class="src">OpenAI Developers Cookbook</span><span class="sep">·</span><span class="type">illustration</span></div>
-            <h3 class="item-title"><a href="https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex" target="_blank" rel="noopener noreferrer">Using Goals in Codex.</a></h3>
-            <p class="item-summary">Primary-source technical write-up of the Goals feature in Codex 0.128.0: a thread-scoped completion contract that survives across turns, with a named verification surface, constraints, budget, iteration policy, and blocked-stop condition. The piece distinguishes prompt (ask → work → result → wait) from goal (work → check → continue or complete), and supplies a six-part template (outcome, verification surface, constraints, boundaries, iteration policy, blocked-stop) for writing a strong goal. The Deep Hedging worked example demonstrates evidence-based completion in a realistic research-reproduction setting.</p>
+            <h3 class="item-title"><a href="https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex" target="_blank" rel="noopener noreferrer">Codex's Goals feature replaces ask-and-wait prompting with a persistent contract the agent works until a named verification surface confirms completion.</a></h3>
+            <p class="item-summary">It supplies a six-part template for writing a strong goal: outcome, verification surface, constraints, boundaries, iteration policy, and blocked-stop condition.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
-              <span class="traj" aria-label="too new to chart">— too new to chart</span>
               <span class="date">28 may 2026</span>
             </div>
           </li>
 
-          <li>
-            <div class="item-top"><span class="src">Brandon Gell &amp; Willie Williams, Every</span><span class="sep">·</span><span class="type">evidence</span></div>
-            <h3 class="item-title"><a href="https://every.to/source-code/we-gave-every-employee-an-ai-agent-here-s-what-we-re-doing-differently-now" target="_blank" rel="noopener noreferrer">Every rolled out a personal agent per employee, abandoned it within weeks, rebuilt around shared coworkers with explicit roles, group access, and group memory.</a></h3>
-            <p class="item-summary">Plus One launched after a Panama retreat as a personal-agent-per-employee deployment on Every's OpenClaw harness. The architecture was abandoned within weeks because the agents were unreliable, broke constantly, and required more upkeep than the productivity they returned. Plus One 2.0 is being rebuilt around shared, reliable coworkers with explicit roles, scoped group access, and memory accumulated from group interactions. Real-time empirical case of the management-as-infrastructure prescription being learned through failure: the team discovered they needed explicit handoff protocols, scoped delegation, and durable shared memory, exactly the operational substrate the layer prescribes.</p>
+          <li class="tier-2">
+            <div class="item-top"><span class="src">Gottweis et al., Nature</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://www.nature.com/articles/s41586-026-10644-y" target="_blank" rel="noopener noreferrer">A Gemini-based multi-agent system produced hypotheses that outranked the curating experts' best guesses on the hardest goals, validated in three wet labs.</a></h3>
+            <p class="item-summary">It is management-as-infrastructure operating inside one system, with root-cause checking and discernment built into the agent architecture itself.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
-              <span class="traj" aria-label="too new to chart">— too new to chart</span>
+              <span class="date">19 may 2026</span>
+            </div>
+          </li>
+
+          <li class="tier-3">
+            <div class="item-top"><span class="src">Brandon Gell &amp; Willie Williams, Every</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://every.to/source-code/we-gave-every-employee-an-ai-agent-here-s-what-we-re-doing-differently-now" target="_blank" rel="noopener noreferrer">Every rolled out a personal agent per employee, abandoned it within weeks, rebuilt around shared coworkers with explicit roles, group access, and group memory.</a></h3>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
               <span class="date">17 may 2026</span>
             </div>
           </li>
 
-          <li>
+          <li class="tier-3">
             <div class="item-top"><span class="src">John Cutler, The Beautiful Mess</span><span class="sep">·</span><span class="type">evidence</span></div>
             <h3 class="item-title"><a href="https://cutlefish.substack.com/p/tbm-422-exception-presence-delegation" target="_blank" rel="noopener noreferrer">TBM 422: Exception, Presence, Delegation as the three-motion working repertoire of management as infrastructure.</a></h3>
-            <p class="item-summary">Cutler proposes a three-motion triad as the back-to-basics management vocabulary the agentic moment calls for. Exception-based systems flag deviation from baseline and learn from the exceptions themselves; presence-based work transfers tacit knowledge that documentation cannot capture; delegation pushes authority to information rather than information to authority. The three create a virtuous loop and each fails when run without the other two; Mulally at Ford, Chesky at Airbnb, and Huang at Nvidia are the worked examples.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
-              <span class="traj" aria-label="too new to chart">— too new to chart</span>
               <span class="date">16 may 2026</span>
             </div>
           </li>
 
-          <li>
+          <li class="tier-3">
             <div class="item-top"><span class="src">Mike Krieger, Anthropic CPO</span><span class="sep">·</span><span class="type">evidence</span></div>
             <h3 class="item-title"><a href="https://sources.news/p/anthropic-mike-krieger-interview-future-claude-ai" target="_blank" rel="noopener noreferrer">"Anthropic is shipping our harness strategy, not a product."</a></h3>
-            <p class="item-summary">Krieger names the current split between Claude AI, Cowork, and Claude Code as "a broken abstraction we need to fix" and frames Anthropic's posture as shipping the harness rather than the model. The platform-side correlate of the operating-substrate claim: agent plus canvas as the unit of work, MCP as the distribution channel, screenshot-verification as a substrate primitive. Two operational details strengthen Layer 3 directly: Anthropic Labs runs two-week sprints, and the team is composed mostly of former founders.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
-              <span class="traj" aria-label="too new to chart">— too new to chart</span>
               <span class="date">15 may 2026</span>
             </div>
           </li>
 
-          <li class="tier-2">
+          <li class="tier-3">
             <div class="item-top"><span class="src">Helm, Priebe, Duderstadt, arXiv cs.MA</span><span class="sep">·</span><span class="type">evidence</span></div>
             <h3 class="item-title"><a href="https://arxiv.org/abs/2605.11135" target="_blank" rel="noopener noreferrer">Adaptive control charts extend lean/SPC to multi-agent LLMs, exposing a fundamental learn-versus-monitor tradeoff.</a></h3>
-            <p class="item-summary">Adaptive control charts proven necessary for monitoring agents that learn, and proven susceptible to adversaries that defect slowly. Closing finding: <em>either agents can learn, or the system stays robust against adversaries</em>.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
               <span class="date">13 may 2026</span>
             </div>
           </li>
 
-          <li class="tier-2">
+          <li class="tier-3">
             <div class="item-top"><span class="src">Li et al., arXiv cs.MA</span><span class="sep">·</span><span class="type">evidence</span></div>
             <h3 class="item-title"><a href="https://arxiv.org/abs/2605.10481" target="_blank" rel="noopener noreferrer">Constraint drift formalised: safety-critical constraints degrade through memory, delegation, communication, audit, and optimisation.</a></h3>
-            <p class="item-summary">Names <em>Constraint State Governance</em>: constraints carried as explicit execution state so accountability mechanisms can be enforced rather than just declared.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
               <span class="date">12 may 2026</span>
@@ -326,7 +316,7 @@
           <li>
             <div class="item-top"><span class="src">SkillSafetyBench authors, arXiv cs.AI / cs.MA</span><span class="sep">·</span><span class="type">evidence</span></div>
             <h3 class="item-title"><a href="https://arxiv.org/abs/2605.12015" target="_blank" rel="noopener noreferrer">Even with benign user requests, task-relevant skill materials can steer agents toward unsafe actions.</a></h3>
-            <p class="item-summary">155 adversarial cases across 47 tasks, 6 risk domains, 30 safety categories, multiple CLI agents and model backends. <em>"Localized non-user attacks can consistently induce unsafe behavior, with distinct failure patterns across domains, attack methods, and scaffold-model pairings."</em> Direct counter-evidence to the framework's assumption that markdown skill files are neutral durable carriers. The properties that make skill files durable (text, addressable, transferable, consumed by downstream computation) make them a transferable attack surface. The Layer 3 prescription needs a trust discipline for skill files that has no clean late-20th-century antecedent; the closest analogue is dependency hygiene in software supply chains, itself a 21st-century discipline still being figured out.</p>
+            <p class="item-summary">Planting instructions in the skill materials an agent reads mid-task can consistently induce unsafe actions on otherwise benign requests, with failure patterns that vary by risk domain, attack method, and scaffold-model pairing. That is direct counter-evidence to the framework's assumption that markdown skill files are neutral, durable carriers: the properties that make them durable (text, addressable, transferable, consumed downstream) are what make them a transferable attack surface. Layer 3 has no clean late-20th-century antecedent for the skill-file trust discipline this implies; the nearest analogue is software supply-chain hygiene, itself still being worked out.</p>
             <div class="item-meta">
               <span class="tag weak"><span class="g">−</span>weakening</span>
               <span class="traj" aria-label="too new to chart">— too new to chart</span>
@@ -374,7 +364,7 @@
 
 <footer class="site">
   <span>building in public</span>
-  <span>last render · 2026-06-19</span>
+  <span>last render · 2026-06-22</span>
 </footer>
 
 </body>
