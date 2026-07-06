@@ -161,9 +161,9 @@
     <div class="section-h">
       <span class="h-title" id="evidence-h">Evidence &amp; illustration</span>
       <span class="count">
-        17 items
-        <span class="g">+</span>13
-        <span class="g weak">−</span>4
+        19 items
+        <span class="g">+</span>14
+        <span class="g weak">−</span>5
       </span>
     </div>
 
@@ -172,9 +172,20 @@
       <div class="col">
         <div class="col-h">
           <span class="name"><span class="g">+</span>supports the claim</span>
-          <span class="n">13 items</span>
+          <span class="n">14 items</span>
         </div>
         <ul class="items">
+
+          <li>
+            <div class="item-top"><span class="src">Liao et al. (Meta)</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://arxiv.org/abs/2606.29823" target="_blank" rel="noopener noreferrer">Storing an agent's exploration history as a queryable database, not disposable logs, reached target speedups 10x faster.</a></h3>
+            <p class="item-summary">The paper treats the artifacts, tool outputs, rewards, and causal lineage an agent generates over hundreds of steps as governed, queryable database state rather than disposable session logs. Grounded in a production accelerator-kernel optimiser at Meta, cross-session reuse of that stored experience reached a target speedup about 10x faster and at lower token cost. It is a quantified production instance of the Layer 3 claim that memory which survives the task compounds agent throughput into durable capability.</p>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
+              <span class="traj" aria-label="too new to chart">— too new to chart</span>
+              <span class="date">29 jun 2026</span>
+            </div>
+          </li>
 
           <li>
             <div class="item-top"><span class="src">Noah Zweben, Anthropic</span><span class="sep">·</span><span class="type">illustration</span></div>
@@ -198,13 +209,12 @@
             </div>
           </li>
 
-          <li>
+          <li class="tier-2">
             <div class="item-top"><span class="src">Anthropic</span><span class="sep">·</span><span class="type">evidence</span></div>
             <h3 class="item-title"><a href="https://claude.com/blog/how-anthropic-enables-self-service-data-analytics-with-claude" target="_blank" rel="noopener noreferrer">Anthropic's analytics agents answer ~95% of internal business queries at ~95% accuracy; without skills, accuracy never exceeded 21%.</a></h3>
-            <p class="item-summary">Anthropic reports its internal analytics agents now answer about 95% of business analytics queries at roughly 95% aggregate accuracy, built on a three-layer stack addressing entity ambiguity, data staleness, and retrieval failure. The decisive figure is the eval delta: without skills the agents did not exceed 21% accuracy, rising consistently above 95% once skills were added. This is direct evidence that specs and skill files act as durable operating protocols rather than optional scaffolding.</p>
+            <p class="item-summary">The decisive figure is the eval delta: without skills the agents did not exceed 21% accuracy, rising consistently above 95% once skills were added.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
-              <span class="traj" aria-label="too new to chart">— too new to chart</span>
               <span class="date">3 jun 2026</span>
             </div>
           </li>
@@ -219,10 +229,9 @@
             </div>
           </li>
 
-          <li class="tier-2">
+          <li class="tier-3">
             <div class="item-top"><span class="src">OpenAI Developers Cookbook</span><span class="sep">·</span><span class="type">illustration</span></div>
             <h3 class="item-title"><a href="https://developers.openai.com/cookbook/examples/codex/using_goals_in_codex" target="_blank" rel="noopener noreferrer">Codex's Goals feature replaces ask-and-wait prompting with a persistent contract the agent works until a named verification surface confirms completion.</a></h3>
-            <p class="item-summary">It supplies a six-part template for writing a strong goal: outcome, verification surface, constraints, boundaries, iteration policy, and blocked-stop condition.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
               <span class="date">28 may 2026</span>
@@ -307,9 +316,20 @@
       <div class="col">
         <div class="col-h weak">
           <span class="name"><span class="g">−</span>challenges the claim</span>
-          <span class="n">4 items</span>
+          <span class="n">5 items</span>
         </div>
         <ul class="items">
+
+          <li>
+            <div class="item-top"><span class="src">John Cutler, The Beautiful Mess</span><span class="sep">·</span><span class="type">illustration</span></div>
+            <h3 class="item-title"><a href="https://cutlefish.substack.com/p/tbm-428-yes-robot-yes-boss" target="_blank" rel="noopener noreferrer">AI clears the blockers built from workflow friction and accelerates the ones built from dysfunction.</a></h3>
+            <p class="item-summary">Cutler splits organisational blockers in two. Where a practice is held back by poor signal visibility, workflow friction, or missing scaffolding, AI removes the drag and can sustain something a team wanted but could never afford; where it is held back by low voice safety, misaligned incentives, or fear, the same tooling makes the avoidance and performance theatre cheaper to automate. This scope-limits Layer 3: rediscovering lean and agile practices absorbs agent capability only when the organisational substrate already favours improvement, and the same infrastructure accelerates dysfunction when it does not.</p>
+            <div class="item-meta">
+              <span class="tag weak"><span class="g">−</span>weakening</span>
+              <span class="traj" aria-label="too new to chart">— too new to chart</span>
+              <span class="date">03 jul 2026</span>
+            </div>
+          </li>
 
           <li>
             <div class="item-top"><span class="src">Rohit Krishnan, Strange Loop Cannon</span><span class="sep">·</span><span class="type">evidence</span></div>
@@ -373,7 +393,7 @@
 
 <footer class="site">
   <span>building in public</span>
-  <span>last render · 2026-06-28</span>
+  <span>last render · 2026-07-06</span>
 </footer>
 
 </body>
