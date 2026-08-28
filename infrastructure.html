@@ -161,9 +161,9 @@
     <div class="section-h">
       <span class="h-title" id="evidence-h">Evidence &amp; illustration</span>
       <span class="count">
-        19 items
-        <span class="g">+</span>14
-        <span class="g weak">−</span>5
+        22 items
+        <span class="g">+</span>16
+        <span class="g weak">−</span>6
       </span>
     </div>
 
@@ -172,9 +172,31 @@
       <div class="col">
         <div class="col-h">
           <span class="name"><span class="g">+</span>supports the claim</span>
-          <span class="n">14 items</span>
+          <span class="n">16 items</span>
         </div>
         <ul class="items">
+
+          <li>
+            <div class="item-top"><span class="src">Sarah Friar, OpenAI</span><span class="sep">·</span><span class="type">illustration</span></div>
+            <h3 class="item-title"><a href="https://openai.com/index/building-an-ai-native-finance-function/" target="_blank" rel="noopener noreferrer">OpenAI's CFO rebuilt finance by mapping each decision back to its data, tools and approvals, keeping validation and final sign-off with humans.</a></h3>
+            <p class="item-summary">Sarah Friar describes building finance around AI by mapping each consequential decision back through the data, tools, approvals and handoffs it requires, then assigning parts to agents while finance keeps validation and final authorisation. The operating discipline is explicit: defined data access, approval thresholds, escalation rules, every output tied to a source, and any baseline change requiring finance sign-off. It binds to Layer 3's claim that management as infrastructure, not raw model capability, is what turns agent throughput into deployable capacity, with the durable protocol located in the workflow redesign and the human control points rather than the model.</p>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
+              <span class="traj" aria-label="too new to chart">— too new to chart</span>
+              <span class="date">10 aug 2026</span>
+            </div>
+          </li>
+
+          <li>
+            <div class="item-top"><span class="src">Fouad Bousetouane, arXiv cs.MA</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://arxiv.org/abs/2607.27677" target="_blank" rel="noopener noreferrer">Across regulated deployments, governance and context evidence decided which agents were production-ready; raw capability did not.</a></h3>
+            <p class="item-summary">A governance-readiness index scoring agent deployments on evaluation, context, compliance, and whether the organisation can authorise, monitor, audit, and control the agent was validated across healthcare and finance, where it separated higher-risk from lower-risk configurations. Capability improved how the agents behaved but did not determine whether a deployment was ready to ship, and context engineering was the factor that moved reliability. This binds to the Layer 3 claim that management as infrastructure, not raw capability, is what turns agent throughput into safely deployable capacity, locating the decisive factor in context and auditable control rather than in the volume of governance added on top.</p>
+            <div class="item-meta">
+              <span class="tag"><span class="g">+</span>strengthening</span>
+              <span class="traj" aria-label="too new to chart">— too new to chart</span>
+              <span class="date">30 jul 2026</span>
+            </div>
+          </li>
 
           <li>
             <div class="item-top"><span class="src">Liao et al. (Meta)</span><span class="sep">·</span><span class="type">evidence</span></div>
@@ -187,42 +209,38 @@
             </div>
           </li>
 
-          <li>
+          <li class="tier-2">
             <div class="item-top"><span class="src">Noah Zweben, Anthropic</span><span class="sep">·</span><span class="type">illustration</span></div>
             <h3 class="item-title"><a href="https://claude.com/blog/agent-identity-access-model" target="_blank" rel="noopener noreferrer">Anthropic's production agents act under their own scoped service accounts, so each action logs against the agent rather than a borrowed human credential.</a></h3>
-            <p class="item-summary">Claude Tag issues each agent a service account in every connected system, scoped to a compartment such as a Slack channel or workspace, so the access question becomes what an agent may do within its boundary rather than what a user may do. The per-agent audit trail lets a failure be traced to the agent that caused it, which is the accountability bonding the framework's moral-crumple-zone design target asks for so blame does not fall on the human operator. It supports the Layer 3 claim that delegation with scope and boundaries is part of the operational substrate, not decoration.</p>
+            <p class="item-summary">Claude Tag issues each agent a service account in every connected system, scoped to a compartment such as a Slack channel or workspace, so the access question becomes what an agent may do within its boundary rather than what a user may do.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
-              <span class="traj" aria-label="too new to chart">— too new to chart</span>
               <span class="date">25 jun 2026</span>
             </div>
           </li>
 
-          <li>
+          <li class="tier-2">
             <div class="item-top"><span class="src">Google Cloud</span><span class="sep">·</span><span class="type">illustration</span></div>
             <h3 class="item-title"><a href="https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing/" target="_blank" rel="noopener noreferrer">Google publishes the Open Knowledge Format, a vendor-neutral spec for knowledge as a directory of frontmatter-tagged markdown an agent can query and edit.</a></h3>
-            <p class="item-summary">Google has published Open Knowledge Format v0.1, a vendor-neutral specification representing organisational knowledge as a directory of frontmatter-tagged markdown documents that an agent can query and edit, with optional index and log files and a one-page spec in the GoogleCloudPlatform/knowledge-catalog repository. It is the second hyperscaler to formalise markdown directories as the operating substrate for agent-readable knowledge. The move corroborates the site's reading that the medium of agentic coordination is markdown, and that specs and skill files are becoming durable operating protocols across vendors.</p>
+            <p class="item-summary">It is the second hyperscaler to formalise markdown directories as the operating substrate for agent-readable knowledge.</p>
             <div class="item-meta">
               <span class="tag new"><span class="g">·</span>new</span>
-              <span class="traj" aria-label="too new to chart">— too new to chart</span>
               <span class="date">11 jun 2026</span>
             </div>
           </li>
 
-          <li class="tier-2">
+          <li class="tier-3">
             <div class="item-top"><span class="src">Anthropic</span><span class="sep">·</span><span class="type">evidence</span></div>
             <h3 class="item-title"><a href="https://claude.com/blog/how-anthropic-enables-self-service-data-analytics-with-claude" target="_blank" rel="noopener noreferrer">Anthropic's analytics agents answer ~95% of internal business queries at ~95% accuracy; without skills, accuracy never exceeded 21%.</a></h3>
-            <p class="item-summary">The decisive figure is the eval delta: without skills the agents did not exceed 21% accuracy, rising consistently above 95% once skills were added.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
               <span class="date">3 jun 2026</span>
             </div>
           </li>
 
-          <li class="tier-2">
+          <li class="tier-3">
             <div class="item-top"><span class="src">Kieran Klaassen, Every</span><span class="sep">·</span><span class="type">illustration</span></div>
             <h3 class="item-title"><a href="https://every.to/guides/compound-engineering-gets-an-upgrade" target="_blank" rel="noopener noreferrer">With a good plan and the right context, the build phase becomes routine and human effort shifts to the two ends of the loop, ideation and polish.</a></h3>
-            <p class="item-summary">The original compound-engineering loop (brainstorm → work → review → compound → repeat) extends to eight steps with ideate and brainstorm prepended and polish appended.</p>
             <div class="item-meta">
               <span class="tag"><span class="g">+</span>strengthening</span>
               <span class="date">29 may 2026</span>
@@ -316,9 +334,20 @@
       <div class="col">
         <div class="col-h weak">
           <span class="name"><span class="g">−</span>challenges the claim</span>
-          <span class="n">5 items</span>
+          <span class="n">6 items</span>
         </div>
         <ul class="items">
+
+          <li>
+            <div class="item-top"><span class="src">Wongchamcharoen et al., CentaurBench (arXiv)</span><span class="sep">·</span><span class="type">evidence</span></div>
+            <h3 class="item-title"><a href="https://arxiv.org/abs/2608.18554" target="_blank" rel="noopener noreferrer">On three of seven real-world tasks, a weaker worker left unaided beat every condition where a stronger model assisted it.</a></h3>
+            <p class="item-summary">CentaurBench scores models separately on automating a task and on assisting a weaker worker through it, and the two rankings barely track each other, so the strongest automator is rarely the strongest assistant. Adding a capable assistant to a work system is therefore unreliable and depends on the task, an independent reproduction of the Assign-All result where more intervention can degrade output. It complicates Layer 3's claim that management as infrastructure turns agent throughput into capability, and joins the counter-evidence showing the right operational substrate depends on the shape of the work rather than its quantity.</p>
+            <div class="item-meta">
+              <span class="tag weak"><span class="g">−</span>weakening</span>
+              <span class="traj" aria-label="too new to chart">— too new to chart</span>
+              <span class="date">19 aug 2026</span>
+            </div>
+          </li>
 
           <li>
             <div class="item-top"><span class="src">John Cutler, The Beautiful Mess</span><span class="sep">·</span><span class="type">illustration</span></div>
@@ -342,13 +371,12 @@
             </div>
           </li>
 
-          <li>
+          <li class="tier-2">
             <div class="item-top"><span class="src">SkillSafetyBench authors, arXiv cs.AI / cs.MA</span><span class="sep">·</span><span class="type">evidence</span></div>
             <h3 class="item-title"><a href="https://arxiv.org/abs/2605.12015" target="_blank" rel="noopener noreferrer">Even with benign user requests, task-relevant skill materials can steer agents toward unsafe actions.</a></h3>
-            <p class="item-summary">Planting instructions in the skill materials an agent reads mid-task can consistently induce unsafe actions on otherwise benign requests, with failure patterns that vary by risk domain, attack method, and scaffold-model pairing. That is direct counter-evidence to the framework's assumption that markdown skill files are neutral, durable carriers: the properties that make them durable (text, addressable, transferable, consumed downstream) are what make them a transferable attack surface. Layer 3 has no clean late-20th-century antecedent for the skill-file trust discipline this implies; the nearest analogue is software supply-chain hygiene, itself still being worked out.</p>
+            <p class="item-summary">That is direct counter-evidence to the framework's assumption that markdown skill files are neutral, durable carriers: the properties that make them durable (text, addressable, transferable, consumed downstream) are what make them a transferable attack surface.</p>
             <div class="item-meta">
               <span class="tag weak"><span class="g">−</span>weakening</span>
-              <span class="traj" aria-label="too new to chart">— too new to chart</span>
               <span class="date">13 may 2026</span>
             </div>
           </li>
@@ -393,7 +421,7 @@
 
 <footer class="site">
   <span>building in public</span>
-  <span>last render · 2026-07-06</span>
+  <span>last render · 2026-08-24</span>
 </footer>
 
 </body>
